@@ -19,6 +19,14 @@ Open <http://localhost:3000>. Run `npm run build` and `npm run typecheck` before
 - English and Arabic interface copy, responsive styles, reusable UI components, and brand/demo images already used by those pages.
 - Illustrative pricing data and pre-rendered Try-On examples. Pricing is sample content, not a live offer.
 
+## Developer handoff
+
+- [Demo brief](docs/DEMO_BRIEF.md): product story, proposed redesign scope, interaction references, and review criteria.
+- [Brand and assets](docs/BRAND_AND_ASSETS.md): logo, fonts, colors, image paths, and asset status.
+- [Open items](docs/OPEN_ITEMS.md): inputs the owner still needs to approve or provide.
+
+This is working website source code, not a hosted preview. Run it locally to review the current implementation. Make demo changes on a branch and share a preview for review before any production work.
+
 ## Demo boundaries
 
 This repository does not connect to production. Try-On does not upload photos or generate new images. CTAs do not submit leads, create accounts, book calls, or process payments. Analytics tracking is disabled. All data shown here is illustrative.
