@@ -4,7 +4,7 @@
 
 This repository contains the working public website interface. Run `npm install` and `npm run dev`, then open `http://localhost:3000`. The homepage is `/`; the other public routes are Shopping, Conversations, Operations, Integrations, Pricing, ROI, Security, and Try-On. The code is Next.js, React, TypeScript, and Tailwind. No production credentials or deployment access are needed.
 
-The first deliverable is a **reviewable redesign of the homepage (`/`) only**, built from this source. Other public routes are product and content reference; they are outside this first redesign scope. The exact homepage sections and elements to retain are awaiting owner confirmation in [Open items](OPEN_ITEMS.md). Keep the existing site runnable and use a branch for changes.
+The first deliverable is a **reviewable redesign of the homepage (`/`) only**, built from this source. Other public routes are product and content reference; they are outside this first redesign scope. The owner-supplied [V7 specification](GrindCTRL_V7_FULL_Product_Website_Experience_Spec.md) defines the visual hierarchy and locked homepage mechanics. See the [asset gap audit](V7_ASSET_GAP_AUDIT.md) before designing proof scenes. Keep the existing site runnable and use a branch for changes.
 
 ## Product story and source copy
 
@@ -23,7 +23,7 @@ These are inspiration for interaction patterns, not assets or layouts to copy:
 | [OptiDress](https://optidress.fr/en) | Connect problem and solution cards to a clear product journey and integration story. |
 | [Perfect Corp](https://www.perfectcorp.com/business/products/virtual-dressing-room-online) | Use compact numbered steps with UI visuals to explain the try-on flow. |
 
-The owner has not yet selected exact interactions or approved a final section list. Treat these as candidates for the first homepage preview.
+The V7 specification selects the locked interactions and recommended section sequence. These external references are inspiration only; the V7 mechanics take priority. Some product proof assets required by V7 are still missing, as recorded in the asset gap audit.
 
 ## Demo delivery and review
 

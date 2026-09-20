@@ -21,6 +21,8 @@ Open <http://localhost:3000>. Run `npm run build` and `npm run typecheck` before
 
 ## Developer handoff
 
+- [V7 full website experience specification](docs/GrindCTRL_V7_FULL_Product_Website_Experience_Spec.md): owner-supplied visual and interaction brief. The first assigned implementation remains the homepage only.
+- [V7 asset gap audit](docs/V7_ASSET_GAP_AUDIT.md): exact inventory, substitutes, and gaps against the specification.
 - [Demo brief](docs/DEMO_BRIEF.md): product story, proposed redesign scope, interaction references, and review criteria.
 - [Brand and assets](docs/BRAND_AND_ASSETS.md): logo, fonts, colors, image paths, and asset status.
 - [Open items](docs/OPEN_ITEMS.md): inputs the owner still needs to approve or provide.
