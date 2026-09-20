@@ -20,6 +20,7 @@ import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { trackClick } from '@/lib/analytics';
 import { BOOKING_URL } from '@/lib/booking';
+import { ShopifyMark } from '@/components/brand-marks';
 import type { LandingTranslator, SiteLocale } from '@/lib/landing/landing-i18n';
 
 /* Anchors into homepage sections. Pricing is a ROUTE, not an anchor — it used
@@ -84,73 +85,90 @@ export function SiteHeader({ locale, t }: { locale: SiteLocale; t: LandingTransl
     'flex min-h-11 items-center text-base text-muted-foreground transition-colors hover:text-foreground';
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:flex-nowrap sm:px-6 lg:px-8">
-        <Link
-          href="/"
-          aria-label={t.brandHome}
-          className="inline-flex min-h-11 min-w-0 items-center rounded-lg"
-        >
-          <BrandLogo className="max-w-full" />
-        </Link>
-
-        <nav className="hidden items-center gap-7 text-sm text-muted-foreground lg:flex">
-          {navLinks.map((link) => (
-            <NavItem
-              key={link.href}
-              href={resolveNavHref(link.href, onHome)}
-              label={t[link.key]}
-              className={desktopLinkClass}
-            />
-          ))}
-
-          <DropdownMenu>
-            <DropdownMenuTrigger
-              className={`group inline-flex items-center gap-1 outline-none ${desktopLinkClass} data-open:text-foreground`}
-            >
-              {t.navProductGroup}
-              <span
-                aria-hidden="true"
-                className="transition-transform duration-200 group-data-[state=open]:rotate-180"
-              >
-                <Icon icon={ArrowDown01Icon} size={14} />
-              </span>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-              {productLinks.map((link) => (
-                <DropdownMenuItem key={link.href} asChild>
-                  <Link href={link.href}>{t[link.key]}</Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <NavItem href={pricingLink.href} label={t[pricingLink.key]} className={desktopLinkClass} />
-        </nav>
-
-        {/* On phones, labels get their own row instead of squeezing an
-            ambiguous sign-in icon into the wordmark. Both actions remain
-            available without opening the menu, including in Arabic. */}
-        <div className="order-last grid w-full grid-cols-2 gap-2 sm:order-none sm:flex sm:w-auto sm:shrink-0 sm:items-center">
-          <Button asChild variant="outline" size="sm" className="min-h-11 rounded-full px-4">
-            <Link href="/try-on">{locale === 'ar' ? 'عرض الديمو' : 'View demo'}</Link>
-          </Button>
-
-          <Button
-            asChild
-            size="sm"
-            className="min-h-11 rounded-full px-4 font-semibold transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md motion-reduce:hover:translate-y-0"
+    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur transition-all duration-300">
+      <div className="container max-w-[120rem] mx-auto px-4">
+        <div className="flex w-full items-center justify-between border-x border-border py-3 px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/"
+            aria-label={t.brandHome}
+            className="inline-flex min-h-10 min-w-0 items-center rounded-lg"
           >
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackClick('cta_clicked', { cta: 'book_call', section: 'header' })}
+            <BrandLogo className="max-w-full" />
+          </Link>
+
+          <nav className="hidden items-center gap-7 text-sm font-medium text-muted-foreground lg:flex">
+            {navLinks.map((link) => (
+              <NavItem
+                key={link.href}
+                href={resolveNavHref(link.href, onHome)}
+                label={t[link.key]}
+                className={desktopLinkClass}
+              />
+            ))}
+
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className={`group inline-flex items-center gap-1 outline-none ${desktopLinkClass} data-open:text-foreground`}
+              >
+                {t.navProductGroup}
+                <span
+                  aria-hidden="true"
+                  className="transition-transform duration-200 group-data-[state=open]:rotate-180"
+                >
+                  <Icon icon={ArrowDown01Icon} size={14} />
+                </span>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                {productLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link href={link.href}>{t[link.key]}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <NavItem href={pricingLink.href} label={t[pricingLink.key]} className={desktopLinkClass} />
+          </nav>
+
+          {/* Antla-Style Right Action Group */}
+          <div className="hidden sm:flex items-center gap-2.5">
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="h-9 rounded-full border-border bg-card px-4 text-xs font-semibold shadow-2xs hover:bg-accent"
             >
-              {t.bookCall}
-            </a>
-          </Button>
-        </div>
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackClick('cta_clicked', { cta: 'book_demo', section: 'header' })}
+              >
+                {locale === 'ar' ? 'احجز عرضاً' : 'Book a Demo'}
+              </a>
+            </Button>
+
+            <div className="flex items-center gap-1">
+              <LandingLocaleToggle />
+              <ThemeToggle locale={locale} />
+            </div>
+
+            <Button
+              asChild
+              size="sm"
+              className="h-9 rounded-full bg-primary text-primary-foreground px-4 text-xs font-semibold shadow-sm hover:bg-primary/90 gap-1.5"
+            >
+              <a
+                href="https://apps.shopify.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackClick('cta_clicked', { cta: 'install_shopify', section: 'header' })}
+              >
+                <ShopifyMark className="size-4 text-[#95BF47]" />
+                <span>{locale === 'ar' ? 'تثبيت على Shopify' : 'Install on Shopify'}</span>
+              </a>
+            </Button>
+          </div>
 
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
@@ -238,6 +256,7 @@ export function SiteHeader({ locale, t }: { locale: SiteLocale; t: LandingTransl
             </div>
           </SheetContent>
         </Sheet>
+        </div>
       </div>
     </header>
   );

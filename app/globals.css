@@ -835,3 +835,320 @@
   .gcpv-aura { opacity: 0.24; transform: none; }
   .gcpv-card:is(:hover, :focus-within), .gcpv-card:is(:hover, :focus-within) .gcpv-source { transform: none; }
 }
+
+/* ─── Antla Benchmark Design System & DataFlow CSS ─── */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap, 2rem)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap, 0px)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 30s) linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 25s) linear infinite;
+}
+
+.bordered-div-padding {
+  padding: 1.25rem;
+}
+@media (min-width: 640px) {
+  .bordered-div-padding {
+    padding: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .bordered-div-padding {
+    padding: 3rem;
+  }
+}
+
+.dfs {
+  --dg-surface: var(--card);
+  --dg-line: var(--border);
+  --dg-grid: color-mix(in oklch, var(--foreground) 6%, transparent);
+  --dg-ink: var(--foreground);
+  --dg-body: var(--muted-foreground);
+  --dg-dim: var(--muted-foreground);
+  --dg-path: color-mix(in oklch, var(--foreground) 18%, transparent);
+  --dg-hub-bg: var(--foreground);
+  --dg-hub-line: var(--foreground);
+  --dg-hub-ink: var(--background);
+  --dg-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--dg-ink);
+}
+
+.dfs-frame {
+  border-left: 1px solid var(--dg-line);
+  border-right: 1px solid var(--dg-line);
+  border-bottom: 1px solid var(--dg-line);
+}
+
+.dfs-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 36px 40px 38px;
+  border-bottom: 1px solid var(--dg-line);
+}
+
+.dfs-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--dg-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dg-dim);
+}
+
+.dfs-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #2d68ff;
+  display: block;
+}
+
+.dfs-title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.08;
+  max-width: 760px;
+  text-wrap: pretty;
+}
+
+.dfs-sub {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--dg-body);
+  max-width: 640px;
+  text-wrap: pretty;
+}
+
+.dfs-scale-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.dfs-desktop {
+  aspect-ratio: 1440 / 600;
+  max-height: 600px;
+}
+
+.dfs-mobile {
+  aspect-ratio: 390 / 860;
+  max-height: 860px;
+}
+
+.dfs-canvas {
+  position: relative;
+  transform-origin: top left;
+}
+
+.dfs-grid-desktop {
+  background-image: linear-gradient(to right, var(--dg-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--dg-grid) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
+}
+
+.dfs-grid-mobile {
+  background-image: linear-gradient(to right, var(--dg-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--dg-grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+}
+
+.dfs-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.dfs-path {
+  stroke: var(--dg-path);
+}
+
+.dfs-node {
+  position: absolute;
+  background: var(--dg-surface);
+  border: 1px solid var(--dg-line);
+  box-sizing: border-box;
+  padding: 0 18px;
+  border-radius: 6px;
+}
+
+.dfs-step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.dfs-channel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dfs-channel-label {
+  font-family: var(--dg-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--dg-dim);
+  line-height: 1.3;
+}
+
+.dfs-hub {
+  background: var(--dg-hub-bg);
+  border-color: var(--dg-hub-line);
+}
+
+.dfs-hub-ink {
+  color: var(--dg-hub-ink);
+}
+
+.dfs-kicker {
+  font-family: var(--dg-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.dfs-blue {
+  color: #2d68ff;
+}
+
+.dfs-green {
+  color: #00a656;
+}
+
+.dfs-activate-label {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--dg-line);
+  background: var(--dg-surface);
+  color: var(--dg-dim);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.dfs-node-title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.dfs-node-sub {
+  font-size: 12px;
+  color: var(--dg-dim);
+}
+
+.dfs-metrics {
+  display: grid;
+  border-top: 1px solid var(--dg-line);
+}
+
+.dfs-desktop-flex {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.dfs-mobile-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.dfs-metric {
+  padding: 28px 36px;
+  border-right: 1px solid var(--dg-line);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dfs-metric-last {
+  border-right: none;
+}
+
+.dfs-metric-num {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.dfs-metric-label {
+  font-size: 14px;
+  color: var(--dg-body);
+}
+
+.dfs-mobile,
+.dfs-mobile-grid {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .dfs-desktop,
+  .dfs-desktop-flex {
+    display: none;
+  }
+  .dfs-mobile {
+    display: block;
+  }
+  .dfs-mobile-grid {
+    display: grid;
+  }
+  .dfs-header {
+    padding: 24px 20px 26px;
+    gap: 12px;
+  }
+  .dfs-title {
+    font-size: 26px;
+    letter-spacing: -0.8px;
+    line-height: 1.15;
+  }
+  .dfs-sub {
+    font-size: 14px;
+  }
+  .dfs-metric {
+    padding: 20px;
+    gap: 4px;
+  }
+  .dfs-metric-num {
+    font-size: 24px;
+    letter-spacing: -0.8px;
+  }
+  .dfs-metric-label {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-vertical {
+    animation: none !important;
+  }
+}

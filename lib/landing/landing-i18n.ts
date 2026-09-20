@@ -356,12 +356,12 @@ const en: LandingDict = {
     },
   ],
 
-  ctaTitle: 'Give shoppers a reason to feel sure before checkout.',
+  ctaTitle: 'See what GrindCTRL can run for your store.',
   ctaBody:
-    'Book a call and we will map the try-on experience to your Shopify theme, catalog, and customer journey.',
+    'Try-on, store chat, team handoffs, workflows, and executive reporting working as one managed commerce system.',
   ctaButton: 'Book a call',
 
-  footerTagline: 'AI commerce experiences for Shopify fashion stores.',
+  footerTagline: 'Managed AI commerce systems for online stores.',
   footerHome: 'Home',
   footerDemo: 'Demo gallery',
   footerPricing: 'Pricing',
@@ -573,12 +573,12 @@ const ar: LandingDict = {
     },
   ],
 
-  ctaTitle: 'امنح عملاءك سببًا للثقة قبل إتمام الشراء.',
+  ctaTitle: 'شاهد ما يمكن لـ GrindCTRL تشغيله لمتجرك.',
   ctaBody:
-    'احجز مكالمة وسنحدد كيف تتكامل تجربة الملابس مع قالب Shopify والكتالوج ورحلة عملائك.',
+    'التجربة الافتراضية، ودردشة المتجر، وتحويلات الفريق، وسير العمل، والتقارير التنفيذية تعمل كنظام تجارة مُدار ومترابط.',
   ctaButton: 'احجز مكالمة',
 
-  footerTagline: 'تجارب تجارة بالذكاء الاصطناعي لمتاجر الأزياء على Shopify.',
+  footerTagline: 'أنظمة تجارة بالذكاء الاصطناعي مُدارة للمتاجر الإلكترونية.',
   footerHome: 'الرئيسية',
   footerDemo: 'معرض الديمو',
   footerPricing: 'الأسعار',
