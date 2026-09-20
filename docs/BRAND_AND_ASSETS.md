@@ -15,7 +15,8 @@ The current logo files are `public/brand/logo.svg` and `public/brand/logo-dark.s
 | Hero proof crops | `public/landing/proof/hero-*.webp` | Cropped versions of the illustrative UI for the homepage hero. |
 | Try-On people and garments | `public/landing/proof/tryon/inputs/` | Synthetic demo input imagery for two people and four garments. |
 | Try-On results | `public/landing/proof/tryon/` | Four pre-rendered pairings: woman with linen shirt or abaya; man with denim overshirt or knit polo. The public repo does not include the generation pipeline. |
+| Editorial lifestyle imagery | `public/landing/editorial/` | Three newly generated conceptual images for optional homepage use: shopper with garment, commerce team, and linen detail. These are AI-generated editorial illustrations, not real GrindCTRL customers or product screenshots. |
 
 There are **no product screen recordings or full dashboard screenshots** in this repository. The UI crops are the only supplied product visuals. Do not invent a dashboard or use real customer screenshots. Obtain reviewed, anonymized or synthetic captures from the owner if the redesign needs more.
 
-The current site contains no video files. If additional media is supplied, confirm ownership and permission for public distribution before committing it.
+The current site contains no video files. Five executable video briefs and their exact source asset rules are in [the creative production pack](CREATIVE_PRODUCTION_PACK.md). Video output requires a motion producer or video-generation tool and owner review before it is represented as finished media.

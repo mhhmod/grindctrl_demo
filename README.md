@@ -24,6 +24,7 @@ Open <http://localhost:3000>. Run `npm run build` and `npm run typecheck` before
 - [Demo brief](docs/DEMO_BRIEF.md): product story, proposed redesign scope, interaction references, and review criteria.
 - [Brand and assets](docs/BRAND_AND_ASSETS.md): logo, fonts, colors, image paths, and asset status.
 - [Open items](docs/OPEN_ITEMS.md): inputs the owner still needs to approve or provide.
+- [Creative production pack](docs/CREATIVE_PRODUCTION_PACK.md): three new editorial images and five precise motion briefs for the homepage.
 
 This is working website source code, not a hosted preview. Run it locally to review the current implementation. Make demo changes on a branch and share a preview for review before any production work.
 

@@ -35,10 +35,6 @@ The owner has not yet selected exact interactions or approved a final section li
 
 See [Brand and assets](BRAND_AND_ASSETS.md) for supplied materials and [Open items](OPEN_ITEMS.md) for decisions still needed.
 
-## Optional 10-second motion prompt
+## Creative materials
 
-Video is optional for the first homepage preview. If motion helps the design, create it from the supplied static demo assets using this brief:
-
-> Create a polished 10-second, silent, seamless-loop website hero video for GrindCTRL, 16:9 master with a center-safe composition for mobile crops. Use only the supplied GrindCTRL logo and product UI crops from `public/landing/proof/`, plus the four pre-rendered Try-On examples and their matching inputs. Start with a clean warm-cream background and the real logo (0-2 s). Move into the existing storefront Try-On UI, showing a gentle garment-thumbnail-to-result transition with the provided matching images (2-5 s). Transition to the existing Conversations and Inbox crops, then the existing report crop, to express one connected commerce workflow (5-9 s). End on a quiet brand frame that loops to the opening (9-10 s). Match the site's warm charcoal and cream palette, Manrope typography, restrained motion, and generous spacing. Keep all product UI text and numbers exactly as in the supplied assets. Add no fabricated screens, customer data, integrations, statistics, testimonials, or claims. Use only licensed supplied material. Export MP4 H.264; make a still poster frame and a reduced-motion static alternative. This is an illustrative product demo, not live platform footage.
-
-Review the storyboard and asset use with the owner before treating the video as approved final media.
+Three optional editorial images and five fully timed 10-second video briefs are in [the creative production pack](CREATIVE_PRODUCTION_PACK.md). The videos are production instructions; no video files are included yet. Review the selected cuts and asset use with the owner before treating them as approved final media.
