@@ -12,7 +12,7 @@ The current logo files are `public/brand/logo.svg` and `public/brand/logo-dark.s
 | --- | --- | --- |
 | Brand logo | `public/brand/` | Current logo variants, used by the site. |
 | Product UI crops | `public/landing/proof/*-en.webp` and `*-ar.webp` | Illustrative product interface captures used on the landing page: chat, inbox, report, storefront Try-On, and Try-On usage. They show demo data; do not present them as live customer activity. |
-| Hero proof crops | `public/landing/proof/hero-*.webp` | Cropped versions of the illustrative UI for the homepage hero. |
+| Hero proof crops | `public/landing/proof/demo-ui-*-hero-crop-*.webp` | Tighter crops of the illustrative UI for the homepage hero. |
 | Try-On people and garments | `public/landing/proof/tryon/inputs/` | Synthetic demo input imagery for two people and four garments. |
 | Try-On results | `public/landing/proof/tryon/` | Four pre-rendered pairings: woman with linen shirt or abaya; man with denim overshirt or knit polo. The public repo does not include the generation pipeline. |
 | Editorial lifestyle imagery | `public/landing/editorial/` | Three newly generated conceptual images for optional homepage use: shopper with garment, commerce team, and linen detail. These are AI-generated editorial illustrations, not real GrindCTRL customers or product screenshots. |
@@ -20,3 +20,7 @@ The current logo files are `public/brand/logo.svg` and `public/brand/logo-dark.s
 There are **no product screen recordings or full dashboard screenshots** in this repository. The UI crops are the only supplied product visuals. Do not invent a dashboard or use real customer screenshots. Obtain reviewed, anonymized or synthetic captures from the owner if the redesign needs more.
 
 The current site contains no video files. Five executable video briefs and their exact source asset rules are in [the creative production pack](CREATIVE_PRODUCTION_PACK.md). Video output requires a motion producer or video-generation tool and owner review before it is represented as finished media.
+
+## File naming
+
+Names tell a developer what an asset is before opening it: `demo-ui-` means a capture with fixture data, `result-` means a pre-rendered Try-On outcome, `inputs/` contains the matching shopper and garment sources, and `concept-` means AI-generated editorial imagery. UI captures end in `-en` or `-ar`; `-hero-crop` is a tighter crop of the same interface. The [V7 asset gap audit](V7_ASSET_GAP_AUDIT.md) maps these files to the specification, whose older `.png` names are preserved verbatim in the owner-supplied document.

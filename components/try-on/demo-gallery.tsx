@@ -5,10 +5,10 @@ import Image from 'next/image';
 import { useTryOnLocale } from './locale-provider';
 
 const looks = [
-  { label: 'Linen shirt', labelAr: 'قميص كتان', src: '/landing/proof/tryon/woman-linen-shirt.webp' },
-  { label: 'Abaya', labelAr: 'عباية', src: '/landing/proof/tryon/woman-abaya.webp' },
-  { label: 'Denim overshirt', labelAr: 'قميص جينز', src: '/landing/proof/tryon/man-denim-overshirt.webp' },
-  { label: 'Knit polo', labelAr: 'بولو محبوك', src: '/landing/proof/tryon/man-knit-polo.webp' },
+  { label: 'Linen shirt', labelAr: 'قميص كتان', src: '/landing/proof/tryon/result-woman-linen-shirt.webp' },
+  { label: 'Abaya', labelAr: 'عباية', src: '/landing/proof/tryon/result-woman-abaya.webp' },
+  { label: 'Denim overshirt', labelAr: 'قميص جينز', src: '/landing/proof/tryon/result-man-denim-overshirt.webp' },
+  { label: 'Knit polo', labelAr: 'بولو محبوك', src: '/landing/proof/tryon/result-man-knit-polo.webp' },
 ] as const;
 
 export function DemoGallery() {

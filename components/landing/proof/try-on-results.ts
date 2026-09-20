@@ -19,7 +19,7 @@ export const TRY_ON_RESULTS: readonly TryOnResult[] = [
   {
     id: 'woman-linen-shirt',
     shopper: 'woman',
-    result: `${BASE}/woman-linen-shirt.webp`,
+    result: `${BASE}/result-woman-linen-shirt.webp`,
     garment: `${BASE}/inputs/garment-linen-shirt.webp`,
     shopperPhoto: `${BASE}/inputs/shopper-woman.webp`,
     name: { en: 'Sage linen shirt', ar: 'قميص كتان أخضر' },
@@ -27,7 +27,7 @@ export const TRY_ON_RESULTS: readonly TryOnResult[] = [
   {
     id: 'woman-abaya',
     shopper: 'woman',
-    result: `${BASE}/woman-abaya.webp`,
+    result: `${BASE}/result-woman-abaya.webp`,
     garment: `${BASE}/inputs/garment-abaya.webp`,
     shopperPhoto: `${BASE}/inputs/shopper-woman.webp`,
     name: { en: 'Embroidered abaya', ar: 'عباية مطرزة' },
@@ -35,7 +35,7 @@ export const TRY_ON_RESULTS: readonly TryOnResult[] = [
   {
     id: 'man-denim-overshirt',
     shopper: 'man',
-    result: `${BASE}/man-denim-overshirt.webp`,
+    result: `${BASE}/result-man-denim-overshirt.webp`,
     garment: `${BASE}/inputs/garment-denim-overshirt.webp`,
     shopperPhoto: `${BASE}/inputs/shopper-man.webp`,
     name: { en: 'Denim overshirt', ar: 'قميص جينز' },
@@ -43,7 +43,7 @@ export const TRY_ON_RESULTS: readonly TryOnResult[] = [
   {
     id: 'man-knit-polo',
     shopper: 'man',
-    result: `${BASE}/man-knit-polo.webp`,
+    result: `${BASE}/result-man-knit-polo.webp`,
     garment: `${BASE}/inputs/garment-knit-polo.webp`,
     shopperPhoto: `${BASE}/inputs/shopper-man.webp`,
     name: { en: 'Knit polo', ar: 'بولو تريكو' },
