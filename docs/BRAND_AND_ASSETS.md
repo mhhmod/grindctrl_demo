@@ -12,12 +12,13 @@ The current logo files are `public/brand/logo.svg` and `public/brand/logo-dark.s
 | --- | --- | --- |
 | Brand logo | `public/brand/` | Current logo variants, used by the site. |
 | Product UI crops | `public/landing/proof/*-en.webp` and `*-ar.webp` | Illustrative product interface captures used on the landing page: chat, inbox, report, storefront Try-On, and Try-On usage. They show demo data; do not present them as live customer activity. |
+| Lead UI, workflow catalog, and analytics preview | `public/landing/proof/demo-ui-captured-leads-demo-data-en.webp`, `demo-ui-workflow-catalog-preview-en.webp`, and `demo-ui-analytics-preview-demo-data-en.webp` | New captures from real product components in an isolated local fixture. The visible banners identify synthetic data. The workflow image is a catalog preview, not an executed run. |
 | Hero proof crops | `public/landing/proof/demo-ui-*-hero-crop-*.webp` | Tighter crops of the illustrative UI for the homepage hero. |
 | Try-On people and garments | `public/landing/proof/tryon/inputs/` | Synthetic demo input imagery for two people and four garments. |
 | Try-On results | `public/landing/proof/tryon/` | Four pre-rendered pairings: woman with linen shirt or abaya; man with denim overshirt or knit polo. The public repo does not include the generation pipeline. |
 | Editorial lifestyle imagery | `public/landing/editorial/` | Three newly generated conceptual images for optional homepage use: shopper with garment, commerce team, and linen detail. These are AI-generated editorial illustrations, not real GrindCTRL customers or product screenshots. |
 
-There are **no product screen recordings or full dashboard screenshots** in this repository. The UI crops are the only supplied product visuals. Do not invent a dashboard or use real customer screenshots. Obtain reviewed, anonymized or synthetic captures from the owner if the redesign needs more.
+There are **no product screen recordings** in this repository. The new lead, workflow catalog, and analytics images provide dashboard visual references with synthetic data. They are not evidence of live customer records, workflow executions, or measured business outcomes.
 
 The current site contains no video files. Five executable video briefs and their exact source asset rules are in [the creative production pack](CREATIVE_PRODUCTION_PACK.md). Video output requires a motion producer or video-generation tool and owner review before it is represented as finished media.
 

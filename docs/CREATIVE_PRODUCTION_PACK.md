@@ -14,6 +14,8 @@ Three new optional editorial images are supplied:
 
 The exact images already shown by the website are in `public/landing/proof/`; the matching Try-On inputs and results are in `public/landing/proof/tryon/`. Use the original image files as source plates. Composite real UI crops in an editor; do not ask a video model to recreate their text or metrics. Do not invent product screens, customer data, numeric claims, customer logos, or new try-on results. A first design can use these images without any video.
 
+Additional source plates now include `demo-ui-captured-leads-demo-data-en.webp`, `demo-ui-workflow-catalog-preview-en.webp`, and `demo-ui-analytics-preview-demo-data-en.webp`. Their visible Demo Data and preview labels must remain visible in any film. The workflow catalog must not be animated into an executed run.
+
 All motion briefs below target **10 seconds**, silent, with a 16:9 desktop master and 9:16 mobile reframing. Keep meaningful content inside the center 60% of the frame. Deliver MP4/H.264, poster still, and a static reduced-motion alternative. Preserve clean frames for English and Arabic copy to be added in the webpage itself, rather than baking translated text into video. Never autoplay audio. If videos are used, load only those visible in the page, provide controls where needed, and respect `prefers-reduced-motion`.
 
 ## Film 1 — The connected journey (hero, 10 seconds)
