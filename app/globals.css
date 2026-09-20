@@ -1,0 +1,837 @@
+/* Cascade layer order for the whole app. Mantine (SaaS surfaces only, see
+   components/mantine) sits above Tailwind's preflight and below utilities,
+   so a className on a Mantine component still wins. Must stay first. */
+@layer theme, base, mantine, components, utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  * {
+    box-sizing: border-box;
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    min-height: 100%;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  body {
+    min-height: 100vh;
+    /* Transparent on purpose: html already paints the page background, and an
+       opaque body would bury the fixed z-index -1 ambient layer behind it. */
+    @apply bg-transparent text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  :where(a, button, input, select, textarea, [role='button'], [tabindex]):focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Mobile Chrome/Safari paint a translucent gray-blue box over a tapped
+     element and leave it there until the next unrelated tap — with no
+     visible :active/:focus style of our own to replace it, a tapped link
+     reads as "stuck highlighted" rather than "was tapped." We already
+     provide our own focus-visible ring above, so the browser's default
+     adds nothing but that stuck-highlight look. */
+  :where(a, button, input, select, textarea, [role='button'], [tabindex]) {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  ::selection {
+    background: #27272a;
+    color: #fff;
+  }
+}
+
+@theme inline {
+  --font-heading: "Manrope Variable", "Inter", "Segoe UI", sans-serif;
+  --font-sans: "Manrope Variable", "Inter", "Segoe UI", sans-serif;
+  --font-arabic: "IBM Plex Sans Arabic", "Manrope Variable", "Segoe UI", sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* Warm near-black-and-white identity from the logo palette
+   (cream #f0ede9 + warm charcoal #2a2826), applied app-wide. */
+:root,
+.light {
+  color-scheme: light;
+  --background: oklch(0.945 0.007 75);
+  --foreground: oklch(0.235 0.006 60);
+  --card: oklch(0.965 0.007 78);
+  --card-foreground: oklch(0.235 0.006 60);
+  --popover: oklch(0.965 0.007 78);
+  --popover-foreground: oklch(0.235 0.006 60);
+  --primary: oklch(0.235 0.006 60);
+  --primary-foreground: oklch(0.945 0.007 75);
+  --secondary: oklch(0.905 0.008 76);
+  --secondary-foreground: oklch(0.235 0.006 60);
+  --muted: oklch(0.905 0.008 76);
+  --muted-foreground: oklch(0.5 0.008 66);
+  --accent: oklch(0.905 0.008 76);
+  --accent-foreground: oklch(0.235 0.006 60);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.86 0.009 76);
+  --input: oklch(0.86 0.009 76);
+  --ring: oklch(0.55 0.008 66);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.965 0.007 78);
+  --sidebar-foreground: oklch(0.235 0.006 60);
+  --sidebar-primary: oklch(0.235 0.006 60);
+  --sidebar-primary-foreground: oklch(0.945 0.007 75);
+  --sidebar-accent: oklch(0.905 0.008 76);
+  --sidebar-accent-foreground: oklch(0.235 0.006 60);
+  --sidebar-border: oklch(0.86 0.009 76);
+  --sidebar-ring: oklch(0.55 0.008 66);
+}
+
+.dark {
+  color-scheme: dark;
+  /* Deepest warm black #0d0c0b with cream #f0ede9 ink */
+  --background: oklch(0.135 0.004 70);
+  --foreground: oklch(0.94 0.008 78);
+  --card: oklch(0.175 0.005 68);
+  --card-foreground: oklch(0.94 0.008 78);
+  --popover: oklch(0.175 0.005 68);
+  --popover-foreground: oklch(0.94 0.008 78);
+  --primary: oklch(0.94 0.008 78);
+  --primary-foreground: oklch(0.205 0.006 64);
+  --secondary: oklch(0.205 0.006 64);
+  --secondary-foreground: oklch(0.94 0.008 78);
+  --muted: oklch(0.205 0.006 64);
+  --muted-foreground: oklch(0.68 0.012 72);
+  --accent: oklch(0.205 0.006 64);
+  --accent-foreground: oklch(0.94 0.008 78);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.26 0.006 66);
+  --input: oklch(0.26 0.006 66);
+  --ring: oklch(0.55 0.01 70);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.175 0.005 68);
+  --sidebar-foreground: oklch(0.94 0.008 78);
+  --sidebar-primary: oklch(0.94 0.008 78);
+  --sidebar-primary-foreground: oklch(0.205 0.006 64);
+  --sidebar-accent: oklch(0.205 0.006 64);
+  --sidebar-accent-foreground: oklch(0.94 0.008 78);
+  --sidebar-border: oklch(0.26 0.006 66);
+  --sidebar-ring: oklch(0.55 0.01 70);
+}
+
+:root,
+.light {
+  --gc-landing-border: oklch(0.86 0.009 76);
+  --gc-landing-panel: oklch(0.97 0.007 78 / 70%);
+  --gc-landing-panel-strong: oklch(0.975 0.007 78);
+  --gc-landing-panel-subtle: oklch(0.92 0.008 76 / 80%);
+  --gc-landing-shadow: 0 22px 70px -46px oklch(0.28 0.012 70 / 42%);
+  --gc-input-icon-bg: oklch(0.955 0.035 252);
+  --gc-input-icon-fg: oklch(0.48 0.17 255);
+  --gc-input-icon-border: oklch(0.82 0.08 252);
+  --gc-output-icon-bg: oklch(0.958 0.038 295);
+  --gc-output-icon-fg: oklch(0.5 0.16 292);
+  --gc-output-icon-border: oklch(0.84 0.085 292);
+}
+
+.dark {
+  --gc-landing-border: oklch(1 0 0 / 9%);
+  --gc-landing-panel: oklch(0.94 0.008 78 / 3%);
+  --gc-landing-panel-strong: oklch(0.175 0.005 68 / 80%);
+  --gc-landing-panel-subtle: oklch(0.94 0.008 78 / 2.5%);
+  --gc-landing-shadow: 0 24px 80px -48px oklch(0 0 0 / 65%);
+  --gc-input-icon-bg: oklch(0.72 0.14 255 / 15%);
+  --gc-input-icon-fg: oklch(0.82 0.1 252);
+  --gc-input-icon-border: oklch(0.72 0.14 255 / 22%);
+  --gc-output-icon-bg: oklch(0.78 0.14 295 / 14%);
+  --gc-output-icon-fg: oklch(0.86 0.09 292);
+  --gc-output-icon-border: oklch(0.78 0.14 295 / 22%);
+}
+
+/* Unlayered, so it would override the transitions Mantine components define
+   in their own layer (a Switch thumb would jump). Mantine elements opt out. */
+:where(body, header, section, article, div, span, button, textarea, input, a, svg):where(:not([class*='mantine-'])) {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 220ms;
+  transition-timing-function: ease;
+}
+
+/* The warm brand tokens above are global since Jul 2026; .gc-landing-root
+   remains only as a scope hook for landing-specific rules (Arabic
+   typography resets, hero grid, animations). */
+
+/* Auth brand pane: always warm-dark regardless of the theme toggle. */
+.gc-auth-brand {
+  background: oklch(0.135 0.004 70);
+  color: oklch(0.94 0.008 78);
+  --foreground: oklch(0.94 0.008 78);
+}
+
+/* Auth form pane: soft top glow so the surface reads as lit, not flat. */
+.gc-auth-form-pane {
+  background:
+    radial-gradient(110% 70% at 80% -10%, color-mix(in oklch, var(--card) 85%, var(--foreground) 4%) 0%, transparent 62%),
+    var(--background);
+}
+
+.gc-hero-grid-warm {
+  background-image:
+    linear-gradient(var(--foreground) 1px, transparent 1px),
+    linear-gradient(90deg, var(--foreground) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.04;
+}
+
+/* Arabic typography: use the Arabic face and undo Latin-only treatments.
+   Letter-spacing and uppercase break connected Arabic script, so reset
+   them within the landing when the active locale is Arabic. */
+:lang(ar) {
+  font-family: var(--font-arabic);
+}
+:lang(ar) * {
+  letter-spacing: normal;
+  text-transform: none;
+}
+.gc-landing-root:lang(ar) :where(h1, h2, h3) {
+  line-height: 1.22;
+}
+.gc-landing-root:lang(ar) :where(p, li) {
+  line-height: 1.85;
+}
+
+.gc-landing-card {
+  border-color: var(--gc-landing-border);
+  background: var(--gc-landing-panel-strong);
+  box-shadow: var(--gc-landing-shadow);
+}
+
+.gc-landing-panel {
+  border-color: var(--gc-landing-border);
+  background: var(--gc-landing-panel);
+}
+
+.gc-landing-subtle {
+  border-color: var(--gc-landing-border);
+  background: var(--gc-landing-panel-subtle);
+}
+
+.gc-icon-input {
+  border-color: var(--gc-input-icon-border);
+  background: var(--gc-input-icon-bg);
+  color: var(--gc-input-icon-fg);
+}
+
+.gc-icon-output {
+  border-color: var(--gc-output-icon-border);
+  background: var(--gc-output-icon-bg);
+  color: var(--gc-output-icon-fg);
+}
+
+/* ─── GrindCTRL Landing Animations ─── */
+
+@keyframes gc-fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ambient page background.
+
+   Performance contract, learned the hard way: the first version applied a
+   72px CSS blur to each layer AND animated its scale. A blurred layer has to
+   be re-rasterized every time its scale changes, so three roughly 1000px
+   textures were re-blurring continuously and every scroll paid for it.
+
+   Now the soft edge comes from a radial-gradient, which is painted once, and
+   the animation only translates, which the compositor handles without any
+   repaint. Same look, a fraction of the cost. Do not reintroduce blur or
+   scale here: app/globals.motion.test.ts fails if either comes back. */
+@keyframes gc-aurora-a {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(9vw, -6vh, 0); }
+}
+
+@keyframes gc-aurora-b {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-10vw, 7vh, 0); }
+}
+
+@keyframes gc-aurora-c {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(7vw, 8vh, 0); }
+}
+
+.gc-aurora {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.gc-aurora span {
+  position: absolute;
+  display: block;
+  /* No filter and no will-change: a transform animation promotes the layer
+     on its own, and pinning three viewport-sized textures costs memory for
+     nothing. */
+  border-radius: 9999px;
+}
+
+/* closest-side puts the gradient's edge exactly at the circle's edge, so the
+   falloff reads as a soft light source rather than a hard disc. */
+.gc-aurora span:nth-child(1) {
+  inset-inline-start: -14%;
+  top: -10%;
+  width: 52vmax;
+  height: 52vmax;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklch, var(--primary) 26%, transparent),
+    transparent
+  );
+  animation: gc-aurora-a 19s ease-in-out infinite;
+}
+
+.gc-aurora span:nth-child(2) {
+  inset-inline-end: -16%;
+  top: 18%;
+  width: 46vmax;
+  height: 46vmax;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklch, var(--primary) 18%, transparent),
+    transparent
+  );
+  animation: gc-aurora-b 24s ease-in-out infinite;
+}
+
+.gc-aurora span:nth-child(3) {
+  inset-inline-start: 26%;
+  bottom: -20%;
+  width: 44vmax;
+  height: 44vmax;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklch, var(--foreground) 12%, transparent),
+    transparent
+  );
+  animation: gc-aurora-c 30s ease-in-out infinite;
+}
+
+/* Phones: two layers instead of three. Nothing else needs reducing now that
+   the expensive filter is gone. */
+@media (pointer: coarse) {
+  .gc-aurora span:nth-child(3) {
+    display: none;
+  }
+}
+
+@keyframes gc-scroll-reveal {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gc-sequence-draw {
+  from { transform: var(--gc-sequence-start, scaleY(0)); }
+  to { transform: none; }
+}
+
+@keyframes gc-result-reveal {
+  from { opacity: 0; transform: translateY(8px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* Try-on scan choreography.
+
+   Mirrors the animation on the Shopify try-on button, which is the motif this
+   product should lead with: a beam sweeps down a ghosted silhouette, a ring
+   pulses outward, a sparkle winks, and the badge's gradient pans behind it.
+   The previous version drifted a garment onto a figure, which read as a
+   clothing brand rather than as AI doing something to your photo.
+
+   Timings are taken from extensions/tryon-block/assets/tryon.css so the two
+   surfaces feel like one product: 2.6s for the scan cycle, 5s for the pan. */
+@keyframes gc-scan-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* translateY is in SVG user units here, not pixels — the viewBox is 24 wide,
+   so 17 sweeps the beam from the top of the head to the base of the shoulders
+   whatever size the badge renders at. A px value would fly off the canvas. */
+@keyframes gc-scan-beam {
+  0%        { transform: translateY(0); opacity: 0; }
+  12%       { opacity: 1; }
+  58%       { transform: translateY(17px); opacity: 1; }
+  72%, 100% { transform: translateY(17px); opacity: 0; }
+}
+
+@keyframes gc-scan-ring {
+  0%        { transform: scale(1); opacity: 0.7; }
+  75%, 100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes gc-scan-spark {
+  0%, 55%   { opacity: 0; transform: scale(0.3); }
+  66%       { opacity: 1; transform: scale(1.1); }
+  74%       { transform: scale(1); }
+  88%, 100% { opacity: 0; transform: scale(0.3); }
+}
+
+.gc-scan-badge  { animation: gc-scan-pan 5s ease-in-out infinite; }
+.gc-scan-beam   { animation: gc-scan-beam 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+.gc-scan-ring   { animation: gc-scan-ring 2.6s ease-out infinite; }
+.gc-scan-spark  { animation: gc-scan-spark 2.6s ease-out infinite; transform-origin: 20.5px 4.9px; }
+
+/* ─── Assistant Launcher Animations ─── */
+
+/* The chat mark's three "typing" dots — the one piece of motion inside the
+   button itself, present in every state so it never reads as inert. */
+@keyframes gc-launcher-typing {
+  0%, 100% { transform: translateY(1px) scale(0.72); opacity: 0.55; }
+  50% { transform: translateY(-1px) scale(1.08); opacity: 1; }
+}
+
+/* Motion DNA: three broken flow-ribbons distilled from GrindCTRL's own logo
+   curvature (public/brand/logo.svg's left curl, diagonal crossing, and lower
+   counter-sweep) rather than a generic circle — chosen over a plain badge or
+   a watermarked copy of the logo after a full side-by-side comparison, see
+   docs/launcher-concepts.html's "Motion DNA" strategy. Colour is
+   var(--foreground) at varying opacity, not a new hue, so it stays inside
+   the same warm cream/charcoal family as the rest of the site in both
+   themes. Only rendered while the launcher is closed (see launcher.tsx). */
+@keyframes gc-launcher-dna-breathe {
+  0% { transform: rotate(-2deg) scale(0.97); }
+  54% { transform: rotate(1.5deg) scale(1.025); }
+  100% { transform: rotate(-0.5deg) scale(0.99); }
+}
+
+@keyframes gc-launcher-dna-flow {
+  to { stroke-dashoffset: -72; }
+}
+
+@keyframes gc-launcher-dna-particle {
+  0% { offset-distance: 0%; transform: scale(0.55); opacity: 0; }
+  12%, 86% { opacity: 0.92; }
+  100% { offset-distance: 100%; transform: scale(1.08); opacity: 0; }
+}
+
+.gc-launcher-chat-mark {
+  display: flex;
+  width: 28px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border-radius: 9px 9px 9px 4px;
+  background: currentColor;
+  filter: drop-shadow(0 2px 4px color-mix(in oklch, var(--primary) 45%, transparent));
+}
+
+.gc-launcher-chat-tail {
+  position: absolute;
+  inset-inline-start: 3px;
+  bottom: -5px;
+  width: 9px;
+  height: 7px;
+  background: currentColor;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.gc-launcher-typing-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--primary);
+  animation: gc-launcher-typing 1.8s ease-in-out infinite;
+}
+
+.gc-launcher-typing-dot:nth-child(2) { animation-delay: -1.2s; }
+.gc-launcher-typing-dot:nth-child(3) { animation-delay: -0.6s; }
+
+.gc-launcher-dna-svg {
+  animation: gc-launcher-dna-breathe 10.6s cubic-bezier(0.22, 1, 0.36, 1) infinite alternate;
+}
+
+.gc-launcher-dna-track {
+  fill: none;
+  stroke: var(--foreground);
+  stroke-linecap: round;
+  animation: gc-launcher-dna-flow linear infinite;
+}
+
+.gc-launcher-dna-track--a {
+  stroke-width: 1.7px;
+  stroke-dasharray: 18 5 3 7;
+  stroke-opacity: 0.85;
+  animation-duration: 6.8s;
+}
+
+.gc-launcher-dna-track--b {
+  stroke-width: 1.25px;
+  stroke-dasharray: 10 4 22 6;
+  stroke-opacity: 0.55;
+  animation-duration: 9.7s;
+  animation-direction: reverse;
+}
+
+.gc-launcher-dna-track--c {
+  stroke-width: 1.05px;
+  stroke-dasharray: 5 5 26 7;
+  stroke-opacity: 0.35;
+  animation-duration: 12.4s;
+}
+
+.gc-launcher-dna-particle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--foreground);
+  offset-rotate: 0deg;
+  animation-name: gc-launcher-dna-particle;
+  animation-timing-function: cubic-bezier(0.45, 0, 0.2, 1);
+  animation-iteration-count: infinite;
+}
+
+.gc-launcher-dna-particle--a {
+  offset-path: path("M 7 27 C 13 8 36 8 54 18 C 64 24 72 24 79 18");
+  offset-distance: 62%;
+  opacity: 0.85;
+  animation-duration: 7.1s;
+}
+
+.gc-launcher-dna-particle--b {
+  offset-path: path("M 10 62 C 28 76 55 73 70 57 C 80 46 80 34 74 27");
+  offset-distance: 36%;
+  opacity: 0.5;
+  animation-duration: 9.3s;
+  animation-direction: reverse;
+}
+
+/* Reduced-motion handling for these lives in the single consolidated block at
+   the end of this file. A second @media block here would split the rule set in
+   two, and globals.motion.test.ts reads the first one it finds. */
+
+/* Try-on reveal. Passive by design: the previous slider was only discoverable
+   by dragging a handle, so most visitors never saw the result at all. Pure
+   keyframes — nothing on the main thread, no library. */
+/* Timing note: the worn result is the payoff, so it holds for most of the
+   loop. The first cut gave it 54%-88% and left the bare garment on screen for
+   roughly two thirds of every cycle — long enough that people reported seeing
+   "only the T-shirt" and never the after. Setup is now brisk and the result
+   sits still. */
+/* The garment drift-and-wipe keyframes are gone with the component that used
+   them. They led with the garment, which read as a clothing brand; the scan
+   choreography above leads with what the product does to a photo, and matches
+   the Shopify button a merchant installs. */
+
+.gc-fade-in-up { animation: gc-fade-in-up 0.5s ease-out both; }
+.gc-result-reveal { animation: gc-result-reveal 280ms ease-out both; }
+.gc-tryon-garment { animation: gc-tryon-garment 6.5s cubic-bezier(.6,0,.3,1) infinite; }
+.gc-tryon-reveal { animation: gc-tryon-reveal 6.5s cubic-bezier(.65,0,.35,1) infinite; }
+.gc-tryon-caption { animation: gc-tryon-caption 6.5s ease-out infinite; }
+
+/* View timelines are enhancement only. Base content above is visible. */
+@supports (animation-timeline: view()) {
+  .gc-scroll-reveal {
+    animation: gc-scroll-reveal 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 8% cover 28%;
+  }
+}
+
+.gc-card-hover {
+  transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+}
+
+/* Cursor-following warm spotlight (Linear/Vercel card pattern).
+   A global listener writes --gc-mx/--gc-my per card; the glow only
+   paints on hover-capable devices. */
+@media (hover: hover) {
+  .gc-spotlight {
+    position: relative;
+  }
+
+  .gc-spotlight::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 320ms ease;
+    background: radial-gradient(
+      280px circle at var(--gc-mx, 50%) var(--gc-my, 50%),
+      color-mix(in oklch, var(--foreground) 9%, transparent),
+      transparent 65%
+    );
+  }
+
+  .gc-spotlight:hover::before {
+    opacity: 1;
+  }
+}
+
+.gc-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklch, var(--foreground) 24%, transparent);
+  box-shadow: 0 18px 48px -30px color-mix(in oklch, var(--foreground) 30%, transparent);
+}
+
+/* Reduced motion: disable all gc animations */
+@media (prefers-reduced-motion: reduce) {
+  /* Reduce motion, do not strip the interface of feedback. Windows
+     Accessibility > Visual effects > Animation effects: Off lands users here,
+     so this is a mainstream path, not an edge case. Travel and looping go;
+     colour and opacity stay, because a UI with no state feedback at all
+     reads as broken rather than calm. */
+
+  /* Anything that loops, drifts, or travels: off. */
+  .gc-animated,
+  .gc-animated *,
+  /* <path> isn't in the tag list below, so the DNA ribbons need naming
+     explicitly — everything else new (svg, span, button) is already
+     covered by tag name. */
+  .gc-launcher-dna-track,
+  :where(body, header, section, article, div, span, button, textarea, input, a, svg) {
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Transitions survive, restricted to properties that move nothing and
+     shortened so they register without feeling animated. Transform is
+     deliberately absent from the list. */
+  :where(body, header, section, article, div, span, button, textarea, input, a, svg) {
+    transition-property: opacity, background-color, border-color, color, fill, stroke, box-shadow !important;
+    transition-duration: 120ms !important;
+  }
+
+  /* Entrance animations resolve straight to their finished state. These
+     classes start at opacity 0, so cancelling the animation without pinning
+     opacity would leave the content permanently invisible. */
+  .gc-fade-in-up,
+  .gc-result-reveal,
+  .gc-scroll-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* The try-on reveal settles on the finished state rather than freezing
+     mid-wipe — a reduced-motion visitor should see the worn result and the
+     caption, which is the point of the section. Note these live on <img> and
+     <figcaption>, which the blanket :where() rule above does not cover. */
+  /* The scan choreography settles rather than freezing mid-sweep: the beam
+     retires, the ring rests, the silhouette and sparkle stay lit. These sit on
+     <span> and SVG elements, which the blanket :where() rule above does not
+     cover. */
+  .gc-scan-badge,
+  .gc-scan-beam,
+  .gc-scan-ring,
+  .gc-scan-spark {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .gc-scan-beam {
+    opacity: 0 !important;
+  }
+
+  .gc-scan-ring {
+    opacity: 0.35 !important;
+  }
+
+  .gc-scan-spark {
+    opacity: 1 !important;
+  }
+
+  /* CollaborationsMarquee (components/landing/collaborations-marquee.tsx) is a
+     static chip list, not an animated marquee, despite its name — nothing
+     to reduce-motion-gate here. */
+
+  .gc-aurora span {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* No hover travel anywhere. */
+  .gc-card-hover:hover {
+    transform: none !important;
+  }
+}
+
+/* Try-on generation: a vertical scan, one outward ring, and a restrained
+   breath. Progress width itself is controlled by real request milestones in
+   TryOnDemo; none of these keyframes imply completion. */
+@keyframes gc-tryon-processing-scan {
+  0%, 10% { transform: translate3d(0, -105%, 0); opacity: 0; }
+  20% { opacity: 0.88; }
+  70% { transform: translate3d(0, 105%, 0); opacity: 0.72; }
+  82%, 100% { transform: translate3d(0, 105%, 0); opacity: 0; }
+}
+
+@keyframes gc-tryon-processing-ring {
+  0%, 46% { transform: scale(0.84); opacity: 0; }
+  54% { opacity: 0.48; }
+  100% { transform: scale(1.18); opacity: 0; }
+}
+
+@keyframes gc-tryon-processing-breathe {
+  0%, 100% { transform: scale(0.985); opacity: 0.86; }
+  50% { transform: scale(1); opacity: 1; }
+}
+
+/* ─── Landing: render receipt (hero figure) ───
+   The ops-chain and messaging-channel versions of this pattern (gccs-*,
+   gcmv-*) were removed with the components that rendered them; this is the
+   one still in use. Dormant until `.in-view` is added (see
+   use-scroll-reveal.ts), built on the real
+   --card/--card-foreground/--muted-foreground/--border tokens so it follows
+   the site's light/dark theme with no extra wiring, and uses CSS logical
+   properties throughout for RTL. */
+
+.gcpv-card, .gcpv-card * {
+  box-sizing: border-box;
+}
+
+/* — 1B: render receipt — */
+.gcpv-card { --gcpv-pad: clamp(16px, 5.45cqw, 24px); position: relative; isolation: isolate; container-type: inline-size; width: min(100%, 440px); aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--border); border-radius: 24px; outline: none; background: var(--card); color: var(--card-foreground); box-shadow: 0 12px 30px color-mix(in oklch, var(--card-foreground) 4%, transparent); transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
+.gcpv-card::before { position: absolute; z-index: 0; inset: 17% 16% 18%; border-radius: 50%; background: radial-gradient(circle at 50% 44%, color-mix(in oklch, var(--card-foreground) 12%, transparent), transparent 70%); opacity: 0.45; pointer-events: none; content: ""; transition: opacity 220ms ease; }
+.gcpv-card:is(:hover, :focus-within) { transform: translateY(-3px); border-color: color-mix(in oklch, var(--card-foreground) 24%, var(--border)); box-shadow: 0 18px 42px color-mix(in oklch, var(--card-foreground) 10%, transparent); }
+.gcpv-card:is(:hover, :focus-within)::before { opacity: 0.82; }
+.gcpv-card:focus-visible { outline: 2px solid color-mix(in oklch, var(--primary) 65%, transparent); outline-offset: 4px; }
+.gcpv-scene { position: absolute; z-index: 1; inset: 0; opacity: 0; transform: translateY(10px); animation: gcpv-reveal 720ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.gcpv-head { position: absolute; z-index: 4; inset-block-start: 6.4%; inset-inline: var(--gcpv-pad); }
+.gcpv-head p { margin: 0; }
+.gcpv-kicker { margin-block-end: 5px !important; color: var(--muted-foreground); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; }
+.gcpv-title { font-size: 17px; font-weight: 650; letter-spacing: -0.02em; }
+.gcpv-flow-space { position: absolute; z-index: 1; inset: 0; direction: ltr; transform-origin: center; }
+.gcpv-flow { display: block; width: 100%; height: 100%; }
+.gcpv-line { fill: none; stroke: color-mix(in oklch, var(--card-foreground) 36%, transparent); stroke-width: 1.2; stroke-linecap: round; stroke-dasharray: 13 8 3 9; animation: gcpv-flow 8.4s linear infinite; }
+.gcpv-line-two { opacity: 0.72; animation-direction: reverse; animation-duration: 10.4s; }
+.gcpv-particle { fill: var(--card-foreground); filter: drop-shadow(0 0 6px color-mix(in oklch, var(--card-foreground) 74%, transparent)); offset-rotate: 0deg; animation: gcpv-particle 6.8s cubic-bezier(0.45, 0, 0.2, 1) infinite; }
+.gcpv-particle-one { offset-path: path("M 88 205 C 104 181 138 160 174 151"); animation-delay: 250ms; }
+.gcpv-particle-two { offset-path: path("M 352 205 C 336 181 302 160 266 151"); animation-delay: 950ms; }
+.gcpv-portrait { position: absolute; z-index: 2; inset-block-start: 19%; inset-inline: 0; width: clamp(138px, 39cqw, 172px); margin-inline: auto; aspect-ratio: 240 / 220; }
+.gcpv-portrait svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.gcpv-glow-core { stop-color: var(--card-foreground); stop-opacity: 0.25; }
+.gcpv-glow-edge { stop-color: var(--card-foreground); stop-opacity: 0; }
+.gcpv-person-light { stop-color: var(--card-foreground); stop-opacity: 0.97; }
+.gcpv-person-mid { stop-color: var(--card-foreground); stop-opacity: 0.76; }
+.gcpv-person-shadow { stop-color: var(--card-foreground); stop-opacity: 0.43; }
+.gcpv-aura { opacity: 0.22; transform-box: fill-box; transform-origin: center; animation: gcpv-breathe 5.2s cubic-bezier(0.45, 0, 0.2, 1) infinite; }
+.gcpv-person { fill: url("#gcpv-person-fill-refined"); stroke: color-mix(in oklch, var(--card-foreground) 24%, transparent); stroke-width: 1.2; filter: drop-shadow(0 12px 18px color-mix(in oklch, var(--card-foreground) 10%, transparent)); transition: filter 220ms ease; }
+.gcpv-card:is(:hover, :focus-within) .gcpv-person { filter: drop-shadow(0 14px 24px color-mix(in oklch, var(--card-foreground) 20%, transparent)); }
+.gcpv-source { position: absolute; z-index: 3; inset-block-start: 61%; width: clamp(112px, 29cqw, 128px); min-block-size: 49px; padding: 9px 11px; border: 1px solid var(--border); border-radius: 12px; background: color-mix(in oklch, var(--card) 90%, var(--muted)); box-shadow: 0 8px 18px color-mix(in oklch, var(--card-foreground) 5%, transparent); transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
+.gcpv-photo { inset-inline-start: var(--gcpv-pad); }
+.gcpv-product { inset-inline-end: var(--gcpv-pad); }
+.gcpv-source::before { position: absolute; inset-block-start: -4px; inset-inline: 0; width: 7px; height: 7px; margin-inline: auto; border-radius: 50%; background: var(--card-foreground); box-shadow: 0 0 11px color-mix(in oklch, var(--card-foreground) 58%, transparent); content: ""; }
+.gcpv-card:is(:hover, :focus-within) .gcpv-source { transform: translateY(-2px); border-color: color-mix(in oklch, var(--card-foreground) 28%, var(--border)); box-shadow: 0 10px 22px color-mix(in oklch, var(--card-foreground) 8%, transparent); }
+.gcpv-source small, .gcpv-source strong { display: block; }
+.gcpv-source small { margin-block-end: 4px; color: var(--muted-foreground); font-size: 8px; letter-spacing: 0.13em; text-transform: uppercase; }
+.gcpv-source strong { font-size: 11px; line-height: 1.2; font-weight: 600; overflow-wrap: anywhere; }
+.gcpv-receipt { position: absolute; z-index: 4; inset-inline: var(--gcpv-pad); inset-block-end: 5.5%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block-start: 11px; border-block-start: 1px solid var(--border); }
+.gcpv-receipt span { display: inline-flex; align-items: center; gap: 8px; color: var(--card-foreground); font-size: 9px; line-height: 1.25; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; }
+.gcpv-receipt span::before { flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--card-foreground); box-shadow: 0 0 12px color-mix(in oklch, var(--card-foreground) 45%, transparent); content: ""; }
+.gcpv-receipt small { color: var(--muted-foreground); font-size: 8px; line-height: 1.25; letter-spacing: 0.12em; text-align: end; text-transform: uppercase; }
+.gcpv-card:dir(rtl) .gcpv-flow-space { transform: scaleX(-1); }
+.gcpv-card:lang(ar) :is(.gcpv-kicker, .gcpv-source small, .gcpv-receipt span, .gcpv-receipt small) { letter-spacing: 0; text-transform: none; }
+/* Same issue as the messaging card at <=360px: the source badge (which sits
+   deliberately low, overlapping the portrait's lower edge by design) was
+   landing on the receipt line below it. A little more card height plus a
+   smaller badge clears it -- verified at a 288px card width, not assumed. */
+@container (max-width: 360px) {
+  .gcpv-source { inset-block-start: 56%; min-block-size: 40px; padding: 6px 9px; }
+  .gcpv-source small { margin-block-end: 2px; }
+}
+
+/* aspect-ratio can't be overridden by a container query on the element that
+   is itself the query container (self-referential -- browsers ignore it for
+   sizing properties, confirmed: the container-query version of this rule
+   silently never applied). A width media query works because it isn't
+   self-referential; the card's own width tracks the viewport closely enough
+   in this single-column mobile layout for the threshold to line up with the
+   container-query one above. */
+@media (max-width: 400px) {
+  .gcpv-card { min-height: 256px; }
+}
+.gcpv-card, .gcpv-card * { animation-play-state: paused; }
+.gcpv-card.in-view, .gcpv-card.in-view * { animation-play-state: running; }
+@keyframes gcpv-reveal { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes gcpv-flow { to { stroke-dashoffset: -96; } }
+@keyframes gcpv-particle { 0% { offset-distance: 0%; opacity: 0; transform: scale(0.55); } 12%, 82% { opacity: 0.94; } 100% { offset-distance: 100%; opacity: 0; transform: scale(1.06); } }
+@keyframes gcpv-breathe { 0%, 100% { opacity: 0.18; transform: scale(0.985); } 50% { opacity: 0.3; transform: scale(1.025); } }
+@media (prefers-reduced-motion: reduce) {
+  .gcpv-card, .gcpv-card * { animation: none !important; transition: none !important; }
+  .gcpv-scene { opacity: 1; transform: none; }
+  .gcpv-line { stroke-dasharray: none; opacity: 0.32; }
+  .gcpv-particle { display: none; }
+  .gcpv-aura { opacity: 0.24; transform: none; }
+  .gcpv-card:is(:hover, :focus-within), .gcpv-card:is(:hover, :focus-within) .gcpv-source { transform: none; }
+}
