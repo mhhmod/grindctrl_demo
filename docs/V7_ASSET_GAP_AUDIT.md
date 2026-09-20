@@ -2,6 +2,8 @@
 
 Checked against the owner-supplied [V7 full experience specification](GrindCTRL_V7_FULL_Product_Website_Experience_Spec.md) and the public demo repository. This is a source and asset audit, **not** browser acceptance of a V7 redesign. The first assigned redesign is the homepage only. V7 also describes later routes and interactions; those routes are not all present or implemented here. The homepage's visual handoff now covers each major product scene with an accurately labeled asset; capability and interaction acceptance remain separate.
 
+**Homepage asset handoff: covered.** Shopping/Try-On, conversations, leads, workflow preview, analytics preview, brand, and integration marks each have a usable, accurately labeled source. **Full V7 experience acceptance: still open** until the developer builds and browser-tests the locked mechanics. A completed workflow run cannot be shown as product proof because the current source only provides a catalog preview.
+
 ## Ready to use
 
 | V7 requirement | Public repo evidence | Status |
@@ -16,7 +18,7 @@ Checked against the owner-supplied [V7 full experience specification](GrindCTRL_
 | Provider icon geometry (§26) | `components/brand-marks.tsx` uses the `simple-icons` package; integration state is recorded in `lib/product-truth/public-integrations.ts` | Present for the listed providers. Display must retain maturity labels and avoid partnership claims. |
 | Supplemental editorial photography (§3, §12) | Three files in `public/landing/editorial/` | Present as AI-generated conceptual images. They cannot substitute for product UI proof. |
 
-## Partial or absent
+## Remaining implementation and evidence gates
 
 | V7 requirement | Finding | What is needed |
 | --- | --- | --- |
