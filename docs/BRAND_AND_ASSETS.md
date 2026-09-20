@@ -18,9 +18,9 @@ The current logo files are `public/brand/logo.svg` and `public/brand/logo-dark.s
 | Try-On results | `public/landing/proof/tryon/` | Four pre-rendered pairings: woman with linen shirt or abaya; man with denim overshirt or knit polo. The public repo does not include the generation pipeline. |
 | Editorial lifestyle imagery | `public/landing/editorial/` | Three newly generated conceptual images for optional homepage use: shopper with garment, commerce team, and linen detail. These are AI-generated editorial illustrations, not real GrindCTRL customers or product screenshots. |
 
-There are **no product screen recordings** in this repository. The new lead, workflow catalog, and analytics images provide dashboard visual references with synthetic data. They are not evidence of live customer records, workflow executions, or measured business outcomes.
+There are **no authentic product screen recordings** in this repository. The new lead, workflow catalog, and analytics images provide dashboard visual references with synthetic data. They are not evidence of live customer records, workflow executions, or measured business outcomes.
 
-The current site contains no video files. Five executable video briefs and their exact source asset rules are in [the creative production pack](CREATIVE_PRODUCTION_PACK.md). Video output requires a motion producer or video-generation tool and owner review before it is represented as finished media.
+One owner-supplied 10-second concept film is in `public/landing/video/grindctrl-homepage-tryon-to-analytics-concept-10s-silent.mp4` (1920×1080, H.264, silent web copy). It depicts invented Try-On and reporting interfaces and fabricated figures, so it is **motion direction only**, not product proof or an approved homepage hero. The supplied source had audio; the public web copy has its audio removed. Five additional briefs are in [the creative production pack](CREATIVE_PRODUCTION_PACK.md).
 
 ## File naming
 

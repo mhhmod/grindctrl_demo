@@ -18,6 +18,10 @@ Additional source plates now include `demo-ui-captured-leads-demo-data-en.webp`,
 
 All motion briefs below target **10 seconds**, silent, with a 16:9 desktop master and 9:16 mobile reframing. Keep meaningful content inside the center 60% of the frame. Deliver MP4/H.264, poster still, and a static reduced-motion alternative. Preserve clean frames for English and Arabic copy to be added in the webpage itself, rather than baking translated text into video. Never autoplay audio. If videos are used, load only those visible in the page, provide controls where needed, and respect `prefers-reduced-motion`.
 
+## Delivered owner concept video
+
+`public/landing/video/grindctrl-homepage-tryon-to-analytics-concept-10s-silent.mp4` is a 10-second, 1920×1080 H.264 concept clip supplied by the owner. The public copy is silent. It shows invented Try-On and dashboard interfaces, synthetic figures, and stylized brand art. Treat it as timing and motion direction only. Do not use it to represent current product UI, actual metrics, or approved logo treatment. Rebuild any final hero using the authentic demo-data UI captures and approved brand assets below.
+
 ## Film 1 — The connected journey (hero, 10 seconds)
 
 **Purpose:** establish that GrindCTRL connects shopping, conversation, and reporting. **Source plates:** `concept-shopper-browsing-sage-shirt.png`, `demo-ui-storefront-tryon-en.webp`, `demo-ui-shopper-chat-hero-crop-en.webp`, `demo-ui-team-inbox-hero-crop-en.webp`, `demo-ui-store-chat-overview-hero-crop-en.webp`. Prepare an Arabic variant with the matching `-ar` files if any UI is legible.
