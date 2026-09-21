@@ -1,37 +1,57 @@
-# GrindCTRL website demo
+# GrindCTRL Developer Demo — V7 LATEST ONLY
 
-This is a standalone, editable copy of the public facing GrindCTRL website interface. It starts from a new Git history and contains no production application, database, authentication, or deployment configuration.
+## Use this branch only
 
-## Run locally
+**Branch:** `developer-handoff-v7-latest-only`
 
-Use Node.js 20 or newer.
+This branch is the clean handoff branch for external developers building the GrindCTRL V7 landing-page demo.
 
-```sh
-npm install
-npm run dev
-```
+Do **not** use specs, visual briefs, archived concepts, or instructions from `main` or older branches as implementation authority.
 
-Open <http://localhost:3000>. Run `npm run build` and `npm run typecheck` before sharing changes.
+## Single source of truth
 
-## Included
+Read exactly this specification before implementation:
 
-- The landing page and public Shopping, Conversations, Operations, Integrations, Pricing, ROI, Security, and Try-On pages.
-- English and Arabic interface copy, responsive styles, reusable UI components, and brand/demo images already used by those pages.
-- Illustrative pricing data and pre-rendered Try-On examples. Pricing is sample content, not a live offer.
+`docs/GRINDCTRL_V7_LATEST_IMPLEMENTATION_SPEC.md`
 
-## Developer handoff
+It contains the latest approved decisions for:
+- GrindCTRL positioning
+- Shopping / Virtual Try-On
+- AI Conversations
+- AI Leads
+- AI Operations
+- AI Business Transformation
+- managed implementation
+- visual direction
+- premium/elegant restraint
+- approved model and garment direction
+- competitor URLs and exact mechanics to study
+- mobile and browser acceptance
 
-- [V7 full website experience specification](docs/GrindCTRL_V7_FULL_Product_Website_Experience_Spec.md): owner-supplied visual and interaction brief. The first assigned implementation remains the homepage only.
-- [V7 asset gap audit](docs/V7_ASSET_GAP_AUDIT.md): exact inventory, substitutes, and gaps against the specification.
-- [Demo brief](docs/DEMO_BRIEF.md): product story, proposed redesign scope, interaction references, and review criteria.
-- [Brand and assets](docs/BRAND_AND_ASSETS.md): logo, fonts, colors, image paths, and asset status.
-- [Open items](docs/OPEN_ITEMS.md): inputs the owner still needs to approve or provide.
-- [Creative production pack](docs/CREATIVE_PRODUCTION_PACK.md): three new editorial images and five precise motion briefs for the homepage.
+## Important design rules
 
-This is working website source code, not a hosted preview. Run it locally to review the current implementation. Make demo changes on a branch and share a preview for review before any production work.
+- Preserve the existing GrindCTRL logo.
+- Preserve the current GrindCTRL color family and theming.
+- Do not invent a new brand palette.
+- Elegant, premium, calm and visual-first.
+- Avoid icon-heavy sections, arrow-heavy diagrams, excessive copy and dashboard clutter.
+- Virtual Try-On and AI/business operations must receive equally serious interactive proof.
+- GrindCTRL is not an n8n/Make/Workato-style DIY workflow builder.
+- Use real product UI and demo-safe data wherever possible.
+- Do not fabricate customer proof, metrics, capabilities or integrations.
 
-## Demo boundaries
+## Assets
 
-This repository does not connect to production. Try-On does not upload photos or generate new images. CTAs do not submit leads, create accounts, book calls, or process payments. Analytics tracking is disabled. All data shown here is illustrative.
+Use assets under `public/` only as source/reference material.
 
-Do not add real credentials, customer information, production URLs, environment samples copied from production, backend code, database or Supabase migrations, workflow exports, API collections, Docker/deployment files, or local agent/MCP settings. Obtain separate demo-only services and assets before adding any live behavior.
+Where the V7 spec explicitly marks an older model/look as unapproved, follow the V7 spec.
+
+Do not connect this demo to production secrets, customer data, production APIs, real WhatsApp sends, real CRM writes, or production-order actions.
+
+## Before coding
+
+Open the live competitor references listed inside the V7 spec and create the required browser/mechanics audit.
+
+Then implement in the staged build gates defined by the spec.
+
+If anything conflicts with the V7 spec, **the V7 spec wins**.
