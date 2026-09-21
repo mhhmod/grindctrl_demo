@@ -39,6 +39,7 @@ This V7 file is authoritative for:
 
 V7 must give equally serious product proof to:
 - AI Shopping / Virtual Try-On
+- Store Chat Widget
 - AI Conversations
 - AI Customer / Lead Operations
 - AI Business Operations
@@ -154,7 +155,9 @@ Approximately 30–35% of major product-proof attention.
 Includes:
 - Virtual Try-On
 - AI Shopping
+- Store Chat Widget
 - storefront experience
+- on-site product discovery and assisted shopping
 
 ## Business-facing AI / Operations
 Approximately 45–55%.
@@ -1059,7 +1062,164 @@ Do not use icon walls, arrow spaghetti, or verbose explanatory labels to tell th
 
 ---
 
-# 25. AI Conversations — interactive proof
+# 25. Store Chat Widget — FIRST-CLASS PRODUCT SURFACE — LOCKED
+
+The Store Chat Widget is not a small sub-feature inside AI Conversations.
+
+It is a visible shopper-facing GrindCTRL product surface that lives directly on the merchant storefront and should receive its own premium interactive proof on the landing page.
+
+The visitor should immediately understand:
+
+**The shopper can ask for help inside the store without leaving the shopping experience, and GrindCTRL can turn that conversation into useful business action.**
+
+## Core Store Chat experience
+
+The landing-page demo should show the widget embedded in a realistic ecommerce storefront or product context.
+
+Possible shopper inputs:
+- "Do you have this in medium?"
+- "Which size should I choose?"
+- "Show me something similar in black."
+- "Can this arrive before Thursday?"
+- "What goes well with this?"
+- "Where is my order?"
+- "I want to exchange this."
+
+Use only behaviors supported by verified product truth or clearly label the state as demo/prototype.
+
+## The widget must show more than chat bubbles
+
+A strong Store Chat demo should visibly connect the conversation to useful context and next action.
+
+Depending on the verified capability, show some combination of:
+- current product
+- product variant
+- size / color context
+- stock context
+- shopper/session context
+- customer context if known and permitted
+- order context
+- recommendation
+- lead capture
+- team handoff
+- next best action
+- outcome/status
+
+The interaction should make the visitor feel:
+
+**"This is an AI shopping/service layer inside my store."**
+
+Not:
+
+**"This is just another chatbot bubble."**
+
+## Premium landing-page mechanic
+
+Preferred demonstration:
+
+1. Show a realistic storefront/product scene.
+2. The GrindCTRL Store Chat Widget is visible as a restrained floating entry point.
+3. The visitor opens it.
+4. A prebuilt shopper question appears or can be selected.
+5. GrindCTRL responds using relevant business/product context.
+6. A useful next action appears.
+7. If the case requires a human, the widget visibly hands the conversation to the team with context preserved.
+
+Keep the visual treatment:
+- elegant
+- minimal
+- product-first
+- low-copy
+- not icon-heavy
+- not a giant chatbot mockup
+
+## Relationship to Try-On
+
+Try-On and Store Chat may connect naturally.
+
+Example:
+
+Shopper tries a garment
+→ asks "Does this run true to size?"
+→ Store Chat uses product context
+→ answers / recommends
+→ checks relevant context if available
+→ captures intent or hands off
+→ business action is recorded
+
+This creates a strong storefront story without making the entire site about Try-On.
+
+## Relationship to AI Conversations
+
+Store Chat Widget = **shopper-facing embedded storefront experience**.
+
+AI Conversations = **broader conversation operations across channels and team/customer context**.
+
+Do not merge them into one generic "chat" section.
+
+They may share infrastructure and UI patterns where truthful, but the landing page should communicate the distinction clearly.
+
+## Visual proof
+
+Use real/anonymized GrindCTRL Store Chat UI where available.
+
+Current demo/reference assets in the repository may include Store Chat overview/chat proof. Prefer these real assets over fabricated marketing UI.
+
+If the real Store Chat UI is visually rough:
+- preserve product truth
+- present it with better framing/cropping
+- do not invent nonexistent controls or capabilities
+
+## Store Chat conversion role
+
+The Store Chat section should demonstrate how an on-site conversation can lead to a measurable next step.
+
+Examples where verified:
+- product discovery
+- size/fit assistance
+- lead capture
+- recommendation
+- support handoff
+- cart/order assistance
+- customer context update
+- sales/team follow-up
+
+Do not invent conversion claims or uplift percentages.
+
+## Mobile behavior
+
+The mobile Store Chat experience is especially important because the widget will often be used on mobile storefronts.
+
+Requirements:
+- entry point does not cover key commerce controls
+- chat panel fits small screens cleanly
+- keyboard/input does not break the layout
+- product cards remain readable
+- tap targets remain large
+- handoff/status remains understandable
+- no desktop-sized panel squeezed into mobile
+
+## Store Chat acceptance
+
+PASS if:
+- the widget is visibly part of a real storefront/product experience
+- the user can open/interact/replay a realistic scenario
+- the response visibly uses useful context
+- there is a clear next action or outcome
+- the widget feels premium and native to GrindCTRL
+- mobile treatment is intentional
+- it is clearly more than a generic chatbot
+
+FAIL if:
+- it appears only as a floating chat icon
+- it is only two chat bubbles with no business/product context
+- it is hidden inside the Conversations section
+- it looks like a generic third-party support widget
+- it implies unsupported live capabilities
+
+---
+
+# 26. AI Conversations — interactive proof
 
 Conversations need the same seriousness as Try-On.
 
@@ -1087,7 +1247,7 @@ Show the operational consequences of the conversation.
 
 ---
 
-# 26. Leads / revenue operations — interactive proof
+# 27. Leads / revenue operations — interactive proof
 
 If verified:
 
@@ -1109,7 +1269,7 @@ The visual story should answer:
 
 ---
 
-# 27. Commerce / order operations — interactive proof
+# 28. Commerce / order operations — interactive proof
 
 Show a realistic operational exception.
 
@@ -1134,7 +1294,7 @@ This gives non-fashion merchants a direct reason to understand GrindCTRL.
 
 ---
 
-# 28. Business Transformation section — major pillar
+# 29. Business Transformation section — major pillar
 
 Do not call this generic "automation".
 
@@ -1166,7 +1326,7 @@ GrindCTRL gives you a tool to design it.
 
 ---
 
-# 29. Managed implementation — major differentiator
+# 30. Managed implementation — major differentiator
 
 This is a major visible differentiator in V7.
 
@@ -1194,7 +1354,7 @@ This should visually distinguish GrindCTRL from DIY agent/automation platforms.
 
 ---
 
-# 30. Operational control
+# 31. Operational control
 
 Use real UI if available.
 
@@ -1216,7 +1376,7 @@ GrindCTRL is not black-box AI.
 
 ---
 
-# 31. Reporting / Management view
+# 32. Reporting / Management view
 
 Show what the business owner/manager sees.
 
@@ -1237,7 +1397,7 @@ Demo data must be labeled.
 
 ---
 
-# 32. Integrations — LOCKED
+# 33. Integrations — LOCKED
 
 Use native official provider icons/marks where permitted.
 
@@ -1282,7 +1442,7 @@ They do NOT imply that GrindCTRL is equivalent to those tools.
 
 ---
 
-# 33. Platform overview
+# 34. Platform overview
 
 The platform overview must connect both worlds:
 
@@ -1304,7 +1464,7 @@ Avoid five generic feature cards.
 
 ---
 
-# 34. Revised GrindCTRL Conversion Engine — LOCKED
+# 35. GrindCTRL Conversion Engine — LOCKED
 
 This is one of the signature sections.
 
@@ -1340,28 +1500,29 @@ This can serve as the conceptual backbone of the whole product.
 
 ---
 
-# 35. Homepage narrative — REVISED
+# 36. Homepage narrative — LATEST
 
 Target sequence:
 
 1. Tall immersive hero
 2. Immediate try-on/shopping wow
-3. Immediate AI-operation wow
-4. Verified trust
-5. Broken process → managed GrindCTRL process
-6. Platform overview
-7. Genlook same-person visual rail
-8. AI Conversations interactive proof
-9. AI Lead / Customer operation
-10. AI Commerce / Order operation
-11. GrindCTRL Conversion Engine
-12. Business Transformation
-13. Reporting / Control
-14. Integrations
-15. Managed implementation
-16. Pricing teaser
-17. Technical / enterprise trust
-18. Final platform CTA
+3. Store Chat Widget interactive storefront proof
+4. Immediate AI-operation wow
+5. Verified trust
+6. Broken process → managed GrindCTRL process
+7. Platform overview
+8. Genlook same-person visual rail
+9. AI Conversations interactive proof
+10. AI Lead / Customer operation
+11. AI Commerce / Order operation
+12. GrindCTRL Conversion Engine
+13. Business Transformation
+14. Reporting / Control
+15. Integrations
+16. Managed implementation
+17. Pricing teaser
+18. Technical / enterprise trust
+19. Final platform CTA
 
 Developer may merge or reorder while preserving:
 - early dual proof
@@ -1371,7 +1532,7 @@ Developer may merge or reorder while preserving:
 
 ---
 
-# 36. Visual rhythm
+# 37. Visual rhythm
 
 Strong interaction
 → quiet explanation
@@ -1390,9 +1551,10 @@ No more than two consecutive sections may use the same composition family.
 
 ---
 
-# 37. Real UI policy — LOCKED
+# 38. Real UI policy — LOCKED
 
 For:
+- Store Chat Widget
 - conversations
 - leads
 - operations
@@ -1411,7 +1573,7 @@ Do not create imaginary capabilities to fill a visual.
 
 ---
 
-# 38. Reviews / customer proof
+# 39. Reviews / customer proof
 
 Genlook remains a reference for strong review presentation.
 
@@ -1432,7 +1594,7 @@ Never fake trust.
 
 ---
 
-# 39. Copy tone
+# 40. Copy tone
 
 Business/results-driven.
 
@@ -1454,7 +1616,7 @@ Use concrete language.
 
 ---
 
-# 40. CTA system
+# 41. CTA system
 
 Primary:
 **See it working**
@@ -1472,7 +1634,7 @@ Use sparingly.
 
 ---
 
-# 41. Pricing
+# 42. Pricing
 
 Homepage may contain pricing teaser.
 
@@ -1487,7 +1649,7 @@ Do not invent commercial structure.
 
 ---
 
-# 42. Navigation
+# 43. Navigation
 
 Recommended:
 
@@ -1495,6 +1657,7 @@ Product
 - Platform
 - AI Shopping
 - Try-On
+- Store Chat
 - Conversations
 - Operations
 - Analytics
@@ -1524,7 +1687,7 @@ Do not expose every internal capability as a nav item.
 
 ---
 
-# 43. Routing
+# 44. Routing
 
 Core:
 
@@ -1539,6 +1702,9 @@ AI shopping
 
 `/try-on`
 Virtual try-on
+
+`/store-chat`
+Store Chat Widget
 
 `/conversations`
 AI conversations
@@ -1574,7 +1740,7 @@ Only create pages with enough real content.
 
 ---
 
-# 44. Hero copy direction
+# 45. Hero copy direction
 
 Do not lock exact copy prematurely.
 
@@ -1594,13 +1760,14 @@ Developer/copywriter may propose stronger wording.
 
 Reject copy that makes GrindCTRL sound like:
 - try-on only
+- Store Chat only
 - chatbot only
 - automation builder
 - AI consulting only
 
 ---
 
-# 45. Business AI visual language
+# 46. Business AI visual language
 
 Do not visually represent AI as:
 - glowing brain
@@ -1621,7 +1788,7 @@ AI should be understood by what it does.
 
 ---
 
-# 46. Approved model, lookbook and garment direction — LOCKED
+# 47. Approved model, lookbook and garment direction — LOCKED
 
 The V7 shopping experience must use a coherent fashion lookbook system rather than one generic shopper image.
 
@@ -1692,7 +1859,7 @@ Do not use fashion photography as the dominant visual language for AI Operations
 
 ---
 
-# 47. Demo data strategy
+# 48. Demo data strategy
 
 Create a coherent fictional merchant/demo environment rather than random values.
 
@@ -1748,6 +1915,13 @@ Mobile must preserve BOTH wow experiences.
 - horizontal product selector
 - tap changes garment
 - before/result interaction
+
+## Store Chat Widget
+- storefront entry point remains visible but unobtrusive
+- full chat panel fits small screens
+- product/context cards remain readable
+- handoff/status remains clear
+- no overlap with add-to-cart or checkout controls
 
 ## AI Operation
 - horizontal scenario chips
@@ -1983,6 +2157,7 @@ This gate must receive the SAME browser-review seriousness as Try-On.
 Build editorial AI business transformation scene.
 
 ## Gate 6 — Product proof
+Store Chat Widget
 Conversations
 Leads
 Commerce/order operations
@@ -2006,6 +2181,7 @@ Side-by-side review against both competitor families.
 
 PASS only if the visitor can quickly understand:
 - GrindCTRL is broader than Try-On
+- Store Chat is a real storefront product surface, not just a chat icon
 - GrindCTRL works across real business operations
 - GrindCTRL is a managed platform/service
 - it connects AI with real systems/actions
@@ -2167,6 +2343,7 @@ The website must prove TWO things with equal seriousness:
 
 For every major AI capability ask:
 
+- If it is shopper-facing, can the visitor experience it inside a realistic storefront context?
 - Can the visitor try or replay something?
 - Can they see the input?
 - Can they see the context?
