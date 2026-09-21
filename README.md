@@ -4,56 +4,340 @@
 
 **Branch:** `developer-handoff-v7-latest-only`
 
-This branch is the clean handoff branch for external developers building the GrindCTRL V7 landing-page demo.
+This branch is the complete developer handoff for the GrindCTRL V7 landing-page demo.
 
-Do **not** use specs, visual briefs, archived concepts, or instructions from `main` or older branches as implementation authority.
+Do not use `main`, older branches, previous chats, old briefs, old screenshots, or older specifications as implementation authority.
 
-## Single source of truth
+## Start here
 
-Read exactly this specification before implementation:
+Read this full specification before implementation:
 
 `docs/GRINDCTRL_V7_LATEST_IMPLEMENTATION_SPEC.md`
 
-It contains the latest approved decisions for:
-- GrindCTRL positioning
-- Shopping / Virtual Try-On
+If anything conflicts with that file, the latest V7 specification wins.
+
+Main GrindCTRL website:
+
+https://grindctrl.cloud
+
+---
+
+## Current task
+
+Build a high-quality working demo of the GrindCTRL V7 website and send a preview link our team can open and review.
+
+Do not deploy anything to the GrindCTRL production stack, current hosting, production database, production APIs, or live customer environment.
+
+The demo must be isolated and safe.
+
+Do not use:
+- production secrets
+- production credentials
+- real customer data
+- real WhatsApp sends
+- real CRM writes
+- real production orders/actions
+
+Use demo-safe data only.
+
+---
+
+## Product positioning
+
+GrindCTRL must NOT look like a Virtual Try-On company.
+
+Virtual Try-On is one important feature inside a broader platform.
+
+GrindCTRL should be positioned as a managed AI commerce, AI operations, and business transformation platform for businesses.
+
+The website should communicate the broader platform, including:
+
+- AI Shopping
+- Virtual Try-On
 - Store Chat Widget
 - AI Conversations
-- AI Leads
-- AI Operations
-- AI Business Transformation
-- managed implementation
-- visual direction
-- premium/elegant restraint
-- approved model and garment direction
-- competitor URLs and exact mechanics to study
-- mobile and browser acceptance
+- Lead Handling
+- Customer Context
+- AI Business Operations
+- Commerce / Order Operations
+- Follow-Ups
+- Reporting & Control
+- Integrations
+- Managed AI Business Transformation
 
-## Important design rules
+GrindCTRL is NOT an n8n, Make, Workato, or Zapier-style DIY automation builder.
 
-- Preserve the existing GrindCTRL logo.
-- Preserve the current GrindCTRL color family and theming.
-- Do not invent a new brand palette.
-- Elegant, premium, calm and visual-first.
-- Avoid icon-heavy sections, arrow-heavy diagrams, excessive copy and dashboard clutter.
-- Virtual Try-On, Store Chat Widget, and AI/business operations must each receive serious interactive proof.
-- Store Chat must be shown as an embedded storefront product experience, not only a floating chat icon.
-- GrindCTRL is not an n8n/Make/Workato-style DIY workflow builder.
-- Use real product UI and demo-safe data wherever possible.
-- Do not fabricate customer proof, metrics, capabilities or integrations.
+The customer should understand that GrindCTRL helps understand the process, connect systems, implement AI and automation, run the operation, keep humans involved where required, monitor outcomes, and improve the process.
 
-## Assets
+---
 
-Use assets under `public/` only as source/reference material.
+## Visual direction
 
-Where the V7 spec explicitly marks an older model/look as unapproved, follow the V7 spec.
+The site should feel:
 
-Do not connect this demo to production secrets, customer data, production APIs, real WhatsApp sends, real CRM writes, or production-order actions.
+- elegant
+- premium
+- modern
+- enterprise-ready
+- very visual
+- calm
+- clean
+- product-first
 
-## Before coding
+Avoid:
 
-Open the live competitor references listed inside the V7 spec and create the required browser/mechanics audit.
+- icon-heavy sections
+- arrow-heavy diagrams
+- excessive copy
+- generic AI graphics
+- repeated feature-card grids
+- noisy dashboards
+- excessive badges/pills
+- workflow-builder visuals
+- generic navy AI SaaS styling
 
-Then implement in the staged build gates defined by the spec.
+Preserve the existing GrindCTRL logo.
 
-If anything conflicts with the V7 spec, **the V7 spec wins**.
+Preserve the current GrindCTRL color family and theme.
+
+Do not invent a new brand palette.
+
+You may improve:
+- composition
+- spacing
+- interaction
+- motion
+- image treatment
+- layout
+- section rhythm
+- visual polish
+
+Do not redesign the brand identity.
+
+---
+
+## Virtual Try-On
+
+The Try-On experience must be visually strong and interactive.
+
+Within each same-person Try-On family preserve:
+
+- same person
+- same face
+- same body
+- same pose
+- same camera
+- same framing
+- same background
+- same lighting
+
+Only the clothing/look should change.
+
+Use the latest approved model and garment direction from the V7 specification.
+
+Do not use superseded model assets that the V7 spec marks as unapproved.
+
+---
+
+## Store Chat Widget
+
+Store Chat is a first-class GrindCTRL product experience.
+
+Do not show it as only a floating chat icon.
+
+It should feel integrated into a real ecommerce storefront/product experience.
+
+It may demonstrate questions such as:
+
+- product questions
+- sizing
+- colors
+- availability
+- recommendations
+- delivery
+- order status
+- exchanges
+- support
+
+Where supported, the experience should use relevant product, cart, customer, order, or session context and lead to a useful next action.
+
+It should visually connect to the wider GrindCTRL platform, including:
+- lead/customer context
+- human handoff
+- business operations
+- follow-up
+- reporting
+
+---
+
+## AI Operations
+
+AI Operations must receive the same visual and interaction quality as Try-On.
+
+Do not explain it only with text.
+
+The visitor should be able to see a business scenario progress through a real-looking managed operation.
+
+Example:
+
+Customer signal  
+→ context found  
+→ business decision  
+→ system action  
+→ human approval if required  
+→ follow-up  
+→ outcome
+
+This should communicate that GrindCTRL runs and manages the process.
+
+It should NOT look like the customer is expected to build nodes or workflows themselves.
+
+---
+
+## Competitor references
+
+Use these references for visual quality, interaction mechanics, storytelling, and product demonstration only.
+
+Do not copy their:
+- design
+- source code
+- assets
+- copy
+- branding
+- trade dress
+- metrics
+- claims
+
+### Shopping / Try-On
+
+Genlook  
+https://genlook.app/
+
+Genlook Live Demo  
+https://demo.genlook.app/
+
+Antla  
+https://antla.io/
+
+OptiDress  
+https://optidress.fr/en/
+
+Perfect Corp  
+https://www.perfectcorp.com/business/products/virtual-dressing-room-online
+
+### AI Operations / Business Transformation
+
+AgentRuntime  
+https://www.agentruntime.io/
+
+Initask  
+https://initask.com/en
+
+Gumloop  
+https://www.gumloop.com/
+
+Kora  
+https://kora.raw-labs.com/
+
+Relevance AI  
+https://relevanceai.com/
+
+### Store Chat / Shopping Assistant
+
+Dialog  
+https://www.askdialog.com/
+
+Gorgias Shopping Assistant  
+https://www.gorgias.com/ai-agent/shopping-assistant
+
+REP AI  
+https://www.hellorep.ai/
+
+Shopify Inbox  
+https://www.shopify.com/inbox
+
+Tidio  
+https://www.tidio.com/
+
+Alhena AI  
+https://alhena.ai/
+
+Bloomreach Conversational Shopping  
+https://www.bloomreach.com/en/use-cases/conversational-shopping
+
+Constructor AI Shopping Agent  
+https://constructor.com/solutions/ai-shopping-agent
+
+Manifest AI  
+https://getmanifest.ai/
+
+Zipchat  
+https://www.zipchat.ai/
+
+The V7 spec contains the deeper URLs, exact mechanics to study, screenshot targets, and GrindCTRL adaptations for each competitor.
+
+Open the live websites in a real browser on desktop and mobile before implementing.
+
+Do not rely only on screenshots or written descriptions.
+
+---
+
+## Repository and assets
+
+Use the code and safe assets available in this branch.
+
+Review the repository before changing architecture or introducing new dependencies.
+
+Do not assume or replace the existing stack unnecessarily.
+
+Use real GrindCTRL product UI and approved demo-safe assets where available.
+
+Do not silently invent missing capabilities.
+
+If an asset, product screenshot, capability, or piece of information is missing, ask exactly for what you need.
+
+---
+
+## Required workflow
+
+Before coding:
+
+1. Read the full V7 specification
+2. Review the existing repo and assets
+3. Open the competitor references in a real browser
+4. Understand GrindCTRL's full positioning
+5. Build the demo separately from production
+6. Test desktop and mobile
+7. Send the preview link for review
+
+Follow the staged build gates in the V7 specification.
+
+---
+
+## Selection process
+
+This demo is being shared with more than 100 developers.
+
+The strongest accepted demo will qualify to continue working with us on more tasks across the GrindCTRL platform.
+
+The demo itself is unpaid.
+
+If the demo is accepted, the developer will continue and complete the full task for **$5**.
+
+Payment will be made after the full task is completed and accepted.
+
+If the work is strong, there may be more paid tasks across the platform afterward.
+
+---
+
+## Final rule
+
+Use only:
+
+**Branch**  
+`developer-handoff-v7-latest-only`
+
+**Specification**  
+`docs/GRINDCTRL_V7_LATEST_IMPLEMENTATION_SPEC.md`
+
+If anything conflicts with the latest V7 specification, the V7 specification wins.
