@@ -3203,3 +3203,726 @@ for breadth and enterprise confidence
 while still remaining:
 
 **unmistakably GrindCTRL, not a clone of any of them.**
+
+---
+
+# 67. Store Chat Widget Competitive Reference Library — LIVE URLS + SCREENSHOT TARGETS
+
+This section is authoritative for the shopper-facing Store Chat Widget.
+
+The developer must study these live products in a real browser before designing the GrindCTRL Store Chat experience.
+
+The objective is NOT to clone a competitor's widget.
+
+The objective is to understand:
+- where the assistant appears
+- how the shopper discovers it
+- how it uses product context
+- how it recommends products
+- how it handles handoff
+- how it moves from conversation to action
+- how it behaves on mobile
+- how much UI is visible before the shopper opens chat
+- how the experience avoids feeling like generic support chat
+
+For every PRIMARY reference, capture screenshots of:
+1. closed/entry state
+2. open chat state
+3. product recommendation state
+4. PDP embedded state if available
+5. human handoff/support state if available
+6. mobile state
+7. any proactive prompt/search/FAQ state
+8. post-conversation action/outcome state where visible
+
+Save the browser audit inside:
+`/docs/grindctrl-v7-store-chat-competitive-audit.md`
+
+This audit is a required implementation artifact created by the developer during the work. It is NOT a second product spec.
+
+---
+
+## 67.1 Dialog — PRIMARY EMBEDDED PDP / PRODUCT-DECISION REFERENCE
+
+Main:
+https://www.askdialog.com/
+
+Virtual Shopping Assistant:
+https://www.askdialog.com/features/virtual-shopping-assistant-for-ecommerce
+
+AI PDP Assistant:
+https://www.askdialog.com/solutions/ai-pdp-assistant
+
+AI Shopping Assistants:
+https://www.askdialog.com/features/ai-shopping-assistants-that-boost-conversions
+
+Shopify Product Recommendation:
+https://www.askdialog.com/features/shopify-ai-product-recommendation-app
+
+AI Product Recommendations:
+https://www.askdialog.com/features/ai-ecommerce-product-recommendations
+
+Customers / live-brand proof:
+https://www.askdialog.com/customers
+
+Configuration / product experiences:
+https://docs.askdialog.com/configuration/
+
+### Why this is a primary GrindCTRL reference
+
+Dialog is especially relevant because it does not rely only on a floating corner chatbot.
+
+Its public product pages describe an assistant that can appear:
+- directly on the PDP
+- under Add to Cart
+- in search
+- on collection pages
+- in guided discovery flows
+
+This is strategically important for GrindCTRL.
+
+The strongest idea to adapt is:
+
+**put the Store Chat experience where the purchase decision is happening, not only behind a floating bubble.**
+
+### Study specifically
+
+- pre-generated product questions
+- free-text question entry
+- inline answer beneath/near product decision controls
+- product comparison
+- product recommendation cards
+- alternative-product suggestion
+- add-to-cart from recommendation where available
+- search/discovery entry points
+- how much of the experience is visible before opening a full chat
+
+### GrindCTRL adaptation
+
+Use Dialog as the main reference for a premium **PDP-native Store Chat surface**.
+
+Potential GrindCTRL pattern:
+
+Product details
++
+Try-On
++
+a restrained "Ask GrindCTRL" field / suggested question
++
+inline contextual answer
++
+recommended next action
+
+The assistant should feel like part of the commerce UI.
+
+Do NOT copy Dialog's exact placement, copy, visual design, conversion claims or layout.
+
+---
+
+## 67.2 Gorgias Shopping Assistant — PRIMARY CONTEXT + PROACTIVE ENGAGEMENT REFERENCE
+
+AI Agent:
+https://www.gorgias.com/ai-agent
+
+Shopping Assistant:
+https://www.gorgias.com/ai-agent/shopping-assistant
+
+Shopping Assistant explanation:
+https://docs.gorgias.com/en-US/shopping-assistant-explained-1216108
+
+Product recommendation behavior:
+https://docs.gorgias.com/en-US/how-shopping-assistant-recommends-products-4996877
+
+AI FAQs / embedded product questions:
+https://docs.gorgias.com/en-US/ai-faqs-proactively-answer-shopper-questions-on-your-website-4662149
+
+Search Assist / Ask Anything:
+https://docs.gorgias.com/en-US/search-assist-and-ask-anything-input-proactively-start-conversations-with-shoppers-1423468
+
+Proactive engagement playbook:
+https://www.gorgias.com/playbooks/chapters/shopping-assistant-8
+
+Product recommendation playbook:
+https://www.gorgias.com/playbooks/chapters/shopping-assistant-2
+
+### Strongest mechanics to study
+
+Gorgias is one of the best references for **context-aware shopping conversation**.
+
+Study how the public documentation describes using:
+- current page
+- products viewed
+- page views
+- cart contents
+- signed-in purchase history
+- buying-intent stage
+- product catalog
+- custom product knowledge
+
+Also inspect:
+- visual product cards in chat
+- add-to-cart from chat
+- AI FAQs floating above chat
+- AI FAQs embedded into product pages
+- Ask Anything input
+- Search Assist
+- proactive engagement
+- human handoff
+
+### GrindCTRL adaptation
+
+The GrindCTRL widget should not repeatedly ask the shopper for information the store already knows.
+
+When truthfully available, the demo should visually communicate awareness of:
+- current product
+- selected variant
+- shopper journey/session
+- cart
+- known customer/order context
+- intent
+
+The response should naturally lead into:
+- recommendation
+- add-to-cart
+- lead capture
+- order/service action
+- human handoff
+
+### Visual lesson
+
+The widget should have useful entry points BEFORE a shopper types.
+
+Possible GrindCTRL equivalents:
+- "Ask about this item"
+- context-specific suggested questions
+- one subtle proactive prompt
+- search-to-chat handoff
+
+Keep this more restrained and premium than a typical support widget.
+
+---
+
+## 67.3 REP AI — PRIMARY PROACTIVE SALES + MULTIPLE WEBSITE SURFACES REFERENCE
+
+Main:
+https://www.hellorep.ai/
+
+Website channel:
+https://www.hellorep.ai/channel/website
+
+Sales Agent:
+https://www.hellorep.ai/platform/sales-agent
+
+Platform:
+https://www.hellorep.ai/platform
+
+Product Finder:
+https://help.hellorep.ai/hc/en-us/articles/34823760751890-Find-the-Right-Products-for-Every-Shopper-with-Product-Finder
+
+Sales Skills / proactive engagement:
+https://help.hellorep.ai/hc/en-us/articles/29213931074066-Boost-Your-Conversion-Rates-with-AI-Powered-Sales-Skills
+
+Underoutfit fashion case study:
+https://www.hellorep.ai/case-studies/underoutfit
+
+### Strongest mechanics to study
+
+REP publicly describes several website surfaces:
+- standard chat widget
+- AI search that opens into a fuller guided experience
+- embedded product-page widgets
+- proactive behavioral engagement
+
+Study:
+- hesitation/exit-intent engagement
+- contextual product discovery
+- guided product search
+- product comparison
+- product carousel
+- upsell after add-to-cart
+- shopper behavior as context
+- embedded product intelligence on PDPs
+
+### GrindCTRL adaptation
+
+This is an important reference for making Store Chat feel **active rather than passive**.
+
+GrindCTRL should not spam visitors or fire popups everywhere.
+
+Instead:
+- react to a meaningful shopping moment
+- use subtle contextual entry
+- give help at decision friction
+- preserve premium calm
+
+Use REP's concept of multiple storefront entry points without making the GrindCTRL page feel covered in widgets.
+
+---
+
+## 67.4 Shopify Inbox — PRIMARY NATIVE SHOPIFY BASELINE
+
+Product:
+https://www.shopify.com/inbox
+
+Shopify App Store:
+https://apps.shopify.com/inbox
+
+AI-agent assignment documentation:
+https://help.shopify.com/ar/manual/inbox/assigning-your-ai-staff-member
+
+### Why it matters
+
+Shopify Inbox is the baseline a Shopify merchant may compare GrindCTRL against.
+
+Its current App Store listing presents an AI sales associate connected to:
+- catalog
+- inventory
+- policies
+- customer preferences/history where available
+- product recommendations
+- order updates
+- AI/live chat
+
+### Study specifically
+
+- launcher and chat-window treatment
+- mobile/desktop surfaces
+- product recommendation presentation
+- human connection/handoff
+- assistant customization
+- conversation feedback
+- online-store integration
+
+### GrindCTRL differentiation
+
+GrindCTRL must visually communicate more than:
+"we also have chat."
+
+The differentiation should be:
+- Store Chat connected to broader GrindCTRL business context
+- conversation can become a lead/customer/operation
+- connection with Try-On and shopping
+- cross-system next action
+- managed implementation
+- broader business operations behind the conversation
+
+---
+
+## 67.5 Tidio Lyro — PRODUCT-CARD + ADD-TO-CART REFERENCE
+
+Tidio:
+https://www.tidio.com/
+
+Shopify product recommendations:
+https://help.tidio.com/hc/en-us/articles/15960742181148-Product-Recommendations-for-Shopify
+
+Lyro recommendation update:
+https://updates.tidio.com/en/lyro-ai-agent-more-effective-recommendations-by-lyro-shopping-assistant-7VoW1YdF
+
+Proactive Lyro:
+https://updates.tidio.com/en/lyro-ai-meet-proactive-lyro
+
+### Strongest mechanics to study
+
+Current Tidio documentation describes:
+- real product cards in chat
+- follow-up questions before recommendation
+- alternative products
+- product comparisons
+- price-range recommendations
+- seasonal recommendations
+- cart-aware recommendations
+- out-of-stock awareness
+- selected size
+- add-to-cart directly from chat
+- proactive conversation starts
+
+### GrindCTRL adaptation
+
+Study the commerce utility of the chat.
+
+Do not copy Tidio's general support-chat visual language.
+
+The GrindCTRL visual should be:
+- more premium
+- quieter
+- more embedded into the store
+- less "support widget"
+- more "shopping and service layer"
+
+---
+
+## 67.6 Alhena AI — PREMIUM COMMERCE BREADTH / EMBEDDABLE AGENTS REFERENCE
+
+Main:
+https://alhena.ai/
+
+AI Shopping Assistant:
+https://alhena.ai/products/ai-shopping-assistant
+
+Ecommerce solution:
+https://alhena.ai/solutions/ecommerce
+
+Embeddable-agent technical article:
+https://alhena.ai/blog/embeddable-ai-shopping-agents/
+
+### Strongest mechanics to study
+
+Alhena is useful because its current commerce story goes beyond a corner widget.
+
+Study:
+- conversational search
+- guided discovery
+- smart FAQs
+- conversion nudges
+- embedded agents on product pages
+- fit/product guidance
+- support + shopping continuity
+- agentic actions/handoff
+- retail-specific visual presentation
+
+### GrindCTRL adaptation
+
+Useful for showing Store Chat as one part of an intelligent storefront.
+
+Especially relevant to GrindCTRL fashion:
+- product discovery
+- fit context
+- Try-On relationship
+- product questions
+- shopper guidance
+
+Do not copy their "hallucination-free" claims, metrics, exact visuals or voice.
+
+---
+
+## 67.7 Bloomreach Conversational Agent / Clarity — ENTERPRISE CONVERSATIONAL STOREFRONT REFERENCE
+
+Conversational Shopping:
+https://www.bloomreach.com/en/use-cases/conversational-shopping
+
+Clarity landing page:
+https://visit.bloomreach.com/clarity-shopping-assistant
+
+Conversational Agent overview:
+https://documentation.bloomreach.com/clarity/docs/get-started-with-bloomreach-clarity
+
+Features:
+https://documentation.bloomreach.com/clarity/docs/clarity-features
+
+### Strongest mechanics to study
+
+Bloomreach is especially useful for the idea that conversational commerce can exist **beyond the chat window**.
+
+Study:
+- behavior-triggered conversation
+- product discovery
+- product carousel
+- mini PDP inside chat
+- personalized conversation
+- Ask Me Anything search
+- product-page conversation starters
+- widget customization
+- conversational surfaces across the site
+
+### GrindCTRL adaptation
+
+This is a strong reference for avoiding a "floating bubble only" design.
+
+Potential GrindCTRL surfaces:
+- product-page question field
+- search assist
+- contextual inline help
+- full widget when deeper conversation is needed
+
+---
+
+## 67.8 Constructor AI Shopping Agent — ENTERPRISE PRODUCT-DISCOVERY REFERENCE
+
+Main:
+https://constructor.com/
+
+AI Shopping Agent:
+https://constructor.com/solutions/ai-shopping-agent
+
+Agent demo:
+https://info.constructor.com/agentic-commerce-demo
+
+AI Shopping Agent documentation:
+https://docs.constructor.com/docs/products-ai-shopping-agents-learn-about-ai-shopping-agent
+
+### Strongest mechanics to study
+
+Study:
+- natural-language intent
+- clarification
+- product recommendations
+- product groups/categories in an answer
+- persistent conversation context
+- product selection
+- move from agent to PDP
+- Product Insights Agent on product pages
+
+### GrindCTRL adaptation
+
+Useful when a shopper does not know the exact SKU they need.
+
+A GrindCTRL Store Chat journey may:
+- understand a broad need
+- ask one or two useful questions
+- show a small set of products
+- explain why
+- let the shopper continue into product/Try-On
+
+Do not turn GrindCTRL into a search-engine platform.
+
+---
+
+## 67.9 Manifest AI — SIMPLE ECOMMERCE SALES + SUPPORT REFERENCE
+
+Main:
+https://getmanifest.ai/
+
+### What to study
+
+Manifest publicly positions one store-trained agent for:
+- pre-sale questions
+- recommendations
+- order status
+- returns
+- support
+- brand instructions/guardrails
+
+### GrindCTRL adaptation
+
+Manifest is useful as a simplicity benchmark.
+
+The Store Chat story should be understandable quickly without requiring the visitor to understand:
+- agents
+- RAG
+- workflows
+- orchestration
+
+The shopper sees:
+question
+→ useful answer
+→ product/action
+→ handoff if needed.
+
+GrindCTRL then differentiates through its broader connected operations.
+
+---
+
+## 67.10 Zipchat — SALES + SUPPORT + MULTICHANNEL REFERENCE
+
+Main:
+https://www.zipchat.ai/
+
+Ecommerce positioning:
+https://www.zipchat.ai/industries/others
+
+Shopping-assistant guide:
+https://www.zipchat.ai/blog/ai-shopping-assistant-guide
+
+### Strongest mechanics to study
+
+Use as a reference for:
+- single sales/support agent
+- website conversation
+- catalog-trained responses
+- product discovery
+- pre-sale + post-sale continuity
+- WhatsApp/Instagram/email continuation
+
+### GrindCTRL adaptation
+
+The strongest lesson is continuity:
+
+A conversation should not be trapped inside the widget.
+
+Where verified, GrindCTRL can move the useful context into:
+- lead/customer record
+- team workflow
+- WhatsApp
+- follow-up
+- operation
+- reporting
+
+---
+
+## 67.11 Luigi's Box Shopping Assistant — GUIDED DISCOVERY REFERENCE
+
+Documentation:
+https://docs.luigisbox.com/shopping-assistant/
+
+### Strongest mechanic
+
+Guided question flow that narrows product results.
+
+Use this as a reference only for:
+- gradual narrowing
+- question-to-product-result interaction
+
+Do not adopt a filter-builder aesthetic.
+
+---
+
+## 67.12 Yuma — POST-PURCHASE / SUPPORT ACTION REFERENCE
+
+AI customer-service agents:
+https://yuma.ai/support-ai
+
+### Why it belongs in the reference set
+
+Yuma is less important for the visual pre-purchase widget itself.
+
+It is useful for the **post-purchase action side**:
+- WISMO
+- returns
+- exchanges
+- order changes
+- policy checks
+- escalation
+
+### GrindCTRL adaptation
+
+The Store Chat Widget should be able to demonstrate that a post-purchase question can become an actual managed operation rather than a dead-end support response, where verified.
+
+This reference connects Store Chat to the broader V7 AI Operations story.
+
+---
+
+## 67.13 Store Chat competitor priority
+
+### Tier 1 — MUST inspect deeply
+
+1. Dialog
+2. Gorgias Shopping Assistant
+3. REP AI
+4. Shopify Inbox
+5. Tidio Lyro
+6. Alhena AI
+
+These six should drive the main Store Chat visual/interaction study.
+
+### Tier 2 — inspect for specific mechanics
+
+7. Bloomreach Clarity / Conversational Agent
+8. Constructor AI Shopping Agent
+9. Manifest AI
+10. Zipchat
+11. Luigi's Box
+12. Yuma
+
+Do not combine every mechanic.
+
+Choose the strongest few that support GrindCTRL.
+
+---
+
+## 67.14 Exact mechanic-to-GrindCTRL mapping
+
+| GrindCTRL Store Chat need | Primary reference | What to learn |
+|---|---|---|
+| PDP-native assistant | Dialog | assistant where the purchase decision happens |
+| Suggested product questions | Dialog + Gorgias | visible conversation entry without opening generic chat |
+| Ask-anything input | Gorgias | low-friction entry |
+| Product cards in chat | Gorgias + Tidio | visual recommendations |
+| Add to cart from conversation | Tidio + Gorgias | conversation becomes commerce action |
+| Proactive help | REP + Gorgias | engage at meaningful friction moments |
+| Embedded product intelligence | REP + Dialog + Alhena | help lives inside PDP, not only corner bubble |
+| Guided discovery | Dialog + Constructor + Luigi's Box | ask useful questions then narrow products |
+| Cart/session awareness | Gorgias + REP | avoid context-blind answers |
+| Mini PDP/product detail inside assistant | Bloomreach | keep shopper in context |
+| Support + selling continuity | Shopify Inbox + Manifest + Zipchat | one shopper conversation across journey stages |
+| Post-purchase action | Gorgias + Yuma | turn support request into operational action |
+| Human handoff | Gorgias + Shopify Inbox | preserve context when AI stops |
+| Try-On + chat relationship | GrindCTRL-specific | use Store Chat beside Try-On/product experience |
+| Conversation → business operation | GrindCTRL-specific | lead, team action, CRM/context, follow-up, reporting |
+
+---
+
+## 67.15 Screenshot / image capture requirements
+
+The competitor audit should not be text-only.
+
+Capture visual references for each Tier-1 competitor.
+
+### Desktop captures
+
+For each competitor capture where available:
+- full PDP/context showing where the assistant lives
+- closed widget / entry state
+- proactive prompt
+- open assistant
+- product recommendation
+- product card
+- product compare / discovery state
+- add-to-cart state
+- human handoff
+- search-assistant state
+- embedded FAQ/question state
+
+### Mobile captures
+
+Capture:
+- launcher position
+- initial open state
+- product recommendation
+- keyboard/input state if practical
+- product card
+- handoff state
+- relationship to Add to Cart / sticky commerce controls
+
+### Reference-storage rule
+
+Competitor screenshots are analysis/reference material only.
+
+Do not ship competitor screenshots in the public GrindCTRL website.
+
+If stored in the developer repo, keep them under a clearly labeled reference-only location such as:
+
+`reference-only/store-chat-competitors/<vendor>/`
+
+and add a README stating:
+
+**REFERENCE ONLY — DO NOT SHIP**
+
+If copyright/licensing makes repo storage undesirable, keep URLs in the audit and use browser review rather than committing the screenshot.
+
+---
+
+## 67.16 GrindCTRL Store Chat final visual direction
+
+After studying competitors, the GrindCTRL Store Chat should NOT look like an ordinary support widget.
+
+Target experience:
+
+- premium
+- elegant
+- calm
+- native to the storefront
+- product-aware
+- action-oriented
+- visually integrated with Try-On
+- minimal copy
+- strong commerce imagery
+- very few icons
+- no loud floating assistant branding
+- no generic blue helpdesk UI
+- no excessive bubbles
+- no heavy bot/avatar gimmick
+
+Preferred hierarchy:
+
+**Inline/PDP assistance first**
++
+**full chat when deeper conversation is needed**
++
+**human handoff when judgment is required**
++
+**business action behind the conversation**
+
+The visitor should understand:
+
+**GrindCTRL Store Chat helps the shopper inside the buying experience, then connects that intent to the business behind the store.**
