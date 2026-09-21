@@ -17,6 +17,7 @@ Read exactly this specification before implementation:
 It contains the latest approved decisions for:
 - GrindCTRL positioning
 - Shopping / Virtual Try-On
+- Store Chat Widget
 - AI Conversations
 - AI Leads
 - AI Operations
@@ -35,7 +36,8 @@ It contains the latest approved decisions for:
 - Do not invent a new brand palette.
 - Elegant, premium, calm and visual-first.
 - Avoid icon-heavy sections, arrow-heavy diagrams, excessive copy and dashboard clutter.
-- Virtual Try-On and AI/business operations must receive equally serious interactive proof.
+- Virtual Try-On, Store Chat Widget, and AI/business operations must each receive serious interactive proof.
+- Store Chat must be shown as an embedded storefront product experience, not only a floating chat icon.
 - GrindCTRL is not an n8n/Make/Workato-style DIY workflow builder.
 - Use real product UI and demo-safe data wherever possible.
 - Do not fabricate customer proof, metrics, capabilities or integrations.
