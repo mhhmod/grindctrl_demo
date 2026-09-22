@@ -1,4 +1,4 @@
-# GrindCTRL Developer Demo — V7 LATEST ONLY
+# GrindCTRL V7 Production-Ready Preview — LATEST ONLY
 
 ## Use this branch only
 
@@ -351,7 +351,7 @@ Before coding:
 2. Review the existing repo and assets
 3. Open the competitor references in a real browser
 4. Understand GrindCTRL's full positioning
-5. Build the demo separately from production
+5. Build the production-ready preview separately from production
 6. Test desktop and mobile
 7. Send the preview link for review
 
