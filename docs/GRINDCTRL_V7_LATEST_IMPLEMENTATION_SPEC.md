@@ -6,7 +6,7 @@
 
 # 0. Authority — SINGLE SOURCE OF TRUTH
 
-This file is the only current product, visual, interaction and implementation specification for the GrindCTRL V7 developer demo branch.
+This file is the only current product, visual, interaction and implementation specification for the GrindCTRL V7 developer handoff branch.
 
 Do not use older GrindCTRL specs, earlier V7 drafts, V3/V4/V5/V6 documents, archived briefs, previous visual concepts, or instructions from other branches as implementation authority.
 
@@ -47,6 +47,51 @@ V7 must give equally serious product proof to:
 - Reporting / Control / Managed Operations
 
 Virtual Try-On is a powerful product proof point, not the definition of GrindCTRL.
+
+---
+
+## 0.1 Production readiness — LOCKED
+
+The review deliverable may be exposed through a safe preview URL, but the implementation must NOT be built as a disposable demo.
+
+The code must be production-ready by design and suitable for integration into the real GrindCTRL production codebase after approval.
+
+The required engineering principle is:
+
+**Preview-safe now. Production-ready underneath.**
+
+The developer must optimize for the real production implementation, not for the shortest path to a visual mockup.
+
+Requirements:
+
+- preserve and reuse the existing GrindCTRL design system and reusable components where appropriate
+- build reusable section/product components rather than one-off prototype markup
+- keep content/data/state separated from presentation
+- keep demo/sample data isolated and replaceable
+- avoid hardcoded production identifiers, credentials, hostnames or secrets
+- do not connect the preview to real customer data or live production actions
+- maintain semantic HTML, accessibility, keyboard navigation and focus states
+- support reduced motion
+- support real responsive widths, not only one desktop screenshot width
+- optimize image/media loading and avoid needless JavaScript
+- provide loading, error, empty and fallback states when an interactive experience requires them
+- avoid introducing unnecessary dependencies or parallel design systems
+- avoid monolithic landing-page components
+- ensure interactive sections can accept real production data/services later without requiring a visual rebuild
+- do not replace a product interaction with a static screenshot when the production experience requires a reusable interactive component
+- do not fabricate backend capabilities to make the preview work
+
+The preview must remain isolated from production until explicit approval.
+
+Production deployment is NOT authorized by this specification.
+
+At implementation handoff, clearly document:
+- what is immediately production-ready
+- what uses demo-safe sample data
+- what production service/API binding is still required
+- any differences between this handoff repository and the actual production repository that require integration work
+
+If the production repository architecture differs from this handoff repository, do not silently redesign or create a second architecture. Flag the mismatch and adapt the implementation to the production architecture before merge.
 
 ---
 
