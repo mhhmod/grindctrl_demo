@@ -4,7 +4,7 @@
 
 **Branch:** `developer-handoff-v7-latest-only`
 
-This branch is the complete developer handoff for the GrindCTRL V7 landing-page demo.
+This branch is the complete developer handoff for the GrindCTRL V7 production-ready landing-page implementation and safe review preview.
 
 Do not use `main`, older branches, previous chats, old briefs, old screenshots, or older specifications as implementation authority.
 
@@ -24,11 +24,13 @@ https://grindctrl.cloud
 
 ## Current task
 
-Build a high-quality working demo of the GrindCTRL V7 website and send a preview link our team can open and review.
+Build the GrindCTRL V7 landing page as **production-ready implementation code**, and provide a separate safe preview link our team can open and review.
 
-Do not deploy anything to the GrindCTRL production stack, current hosting, production database, production APIs, or live customer environment.
+The preview is for review only. The implementation itself must NOT be a disposable prototype or demo-only build.
 
-The demo must be isolated and safe.
+Do not deploy anything to the GrindCTRL production stack, current hosting, production database, production APIs, or live customer environment until explicitly approved.
+
+The review environment must be isolated and safe.
 
 Do not use:
 - production secrets
@@ -39,6 +41,49 @@ Do not use:
 - real production orders/actions
 
 Use demo-safe data only.
+
+---
+
+## Production-ready implementation requirement — LOCKED
+
+The final implementation must be suitable for promotion into the real GrindCTRL production codebase after approval.
+
+Build it as production software from the beginning.
+
+Required:
+
+- reusable components rather than one-off prototype markup
+- maintainable file/component structure
+- responsive behavior for real desktop, tablet and mobile widths
+- semantic HTML and accessibility
+- keyboard/focus behavior
+- reduced-motion support
+- optimized images and media
+- reasonable performance and loading behavior
+- no unnecessary client-side JavaScript
+- no prototype-only dependencies unless justified
+- no hardcoded secrets, hostnames, credentials or production IDs
+- no real customer data
+- clean separation between presentation/demo data and production data sources
+- safe loading/error/empty states where relevant
+- components that can accept real production data later without visual redesign
+- no fake production integrations hidden inside UI logic
+- no duplicated design system if an existing token/component can be reused
+- no massive monolithic landing-page component
+- no desktop-only implementation
+- no screenshot-only substitution for interactive product UI when a real component should exist
+
+Demo-safe sample data is allowed for previewing interactions, but sample data must be clearly isolated so it can be replaced by real production sources without rebuilding the interface.
+
+The preview environment and the production implementation are two different concerns:
+
+**Preview-safe deployment now**
++
+**Production-ready code underneath**
+
+Do not sacrifice maintainability, accessibility, responsiveness, performance, or production integration quality just because the first deliverable is a review link.
+
+Before final handoff, identify any item that still blocks direct production integration.
 
 ---
 
